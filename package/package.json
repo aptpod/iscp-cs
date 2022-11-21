@@ -1,0 +1,11 @@
+{
+    "name": "jp.co.aptpod.iscp",
+    "displayName": "iSCP",
+    "description": "iSCP 2.0 Client Library for C#",
+    "version": "1.0.0",
+    "author": {
+        "name": "aptpod,Inc.",
+        "email": "ueno@aptpod.co.jp",
+        "url": "https://www.aptpod.co.jp/"
+    }
+}
