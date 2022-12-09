@@ -62,10 +62,23 @@ public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
 
     void Connect()
     {
+        // 接続情報のセットアップをします。
+        var urls = targetServer.Split(new string[] { "://" }, StringSplitOptions.None);
+        string address;
+        var enableTls = false;
+        if (urls.Length == 1)
+        {
+            address = urls[0];
+        }
+        else
+        {
+            enableTls = urls[0] == "https";
+            address = urls[1];
+        }
         // WebSocketを使って接続するように指定します。
-        ITransportConfig transportConfig = new WebSocket.Config();
+        ITransportConfig transportConfig = new WebSocket.Config(enableTls: enableTls);
         Connection.Connect(
-            address: targetServer, 
+            address: address, 
             transportConfig: transportConfig, 
             tokenSource: (token) =>
             {
