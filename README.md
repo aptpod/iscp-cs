@@ -323,7 +323,205 @@ public partial class ExampleForUnity : IUpstreamCallbacks
 }
 ```
 
+### E2E Call
+
+E2E（エンドツーエンド）コールのサンプルです。
+
+コントローラノードが対象ノードに対して指示を出し、対象ノードは受信完了のリプライを行う簡単なサンプルです。
+
+```csharp
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+// iSCPをインポート。
+using iSCP;
+using iSCP.Transport;
+using iSCP.Model;
+
+public partial class E2ECallExampleForUnity : MonoBehaviour
+{
+    /// <summary>
+    /// 接続するintdashサーバー
+    /// </summary>
+    string targetServer = "https://example.com";
+
+    /// <summary>
+    /// コントローラーノードのUUID
+    /// </summary>
+    string controllerNodeId = "00000000-0000-0000-0000-000000000000";
+    /// <summary>
+    /// 対象ノードのUUID
+    /// </summary>
+    string targetNodeId = "11111111-1111-1111-1111-111111111111";
+
+    /// <summary>
+    /// コントローラーノード用のアクセストークン
+    /// <para>intdash APIで取得したアクセストークンを指定して下さい。</para>
+    /// </summary>
+    string accessTokenforController = "";
+    /// <summary>
+    /// 対象ノード用のアクセストークン
+    /// <para>intdash APIで取得したアクセストークンを指定して下さい。</para>
+    /// </summary>
+    string accessTokenforTarget = "";
+
+    /// <summary>
+    /// コントローラーノード用のコネクション
+    /// </summary>
+    Connection connectionForController;
+    /// <summary>
+    /// 対象ノード用のコネクション
+    /// </summary>
+    Connection connectionForTarget;
+}
+
+// コントローラーノードからメッセージを送信するサンプルです。このサンプルでは文字列メッセージを対象ノードに対して送信し、対象ノードからのリプライを待ちます。
+public partial class E2ECallExampleForUnity
+{
+
+    void ConnectForController()
+    {
+        // 接続情報のセットアップをします。
+        var urls = targetServer.Split(new string[] { "://" }, StringSplitOptions.None);
+        string address;
+        var enableTls = false;
+        if (urls.Length == 1)
+        {
+            address = urls[0];
+        }
+        else
+        {
+            enableTls = urls[0] == "https";
+            address = urls[1];
+        }
+        // WebSocketを使って接続するように指定します。
+        ITransportConfig transportConfig = new WebSocket.Config(enableTls: enableTls);
+        Connection.Connect(
+            address: address,
+            transportConfig: transportConfig,
+            tokenSource: (token) =>
+            {
+                // アクセストークンを指定します。接続時に発生するイベントにより使用されます。
+                // ここでは固定のトークンを返していますが、随時トークンの更新を行う実装にするとトークンの期限切れを考える必要がなくなります。
+                token(accessTokenforController);
+            },
+            nodeId: controllerNodeId,
+            completion: (con, exception) =>
+            {
+                if (!(con is Connection connection))
+                {
+                    // 接続失敗。
+                    return;
+                }
+                // 接続成功。
+                this.connectionForController = connection;
+            });
+    }
+
+    void SendCall()
+    {
+        // コールを送信し、リプライコールを受信するとコールバックが発生します。
+        connectionForController?.SendCallAndWaitReplyCall(
+            new UpstreamCall(
+                destinationNodeId: targetNodeId,
+                name: "greeting",
+                type: "string",
+                payload: System.Text.Encoding.UTF8.GetBytes("hello")), (downstreamReplyCall, exception) =>
+                {
+                    if (exception != null)
+                    {
+                        // コールの送信もしくはリプライの受信に失敗。
+                    }
+                    else
+                    {
+                        // コールの送信及びリプライの受信に成功。
+                    }
+                });
+    }
+
+}
+
+// コントローラーノードからのコールを受け付け、すぐにリプライするサンプルです。
+public partial class E2ECallExampleForUnity : IConnectionE2ECallCallbacks
+{
+
+    void ConnectForTarget()
+    {
+        // 接続情報のセットアップをします。
+        var urls = targetServer.Split(new string[] { "://" }, StringSplitOptions.None);
+        string address;
+        var enableTls = false;
+        if (urls.Length == 1)
+        {
+            address = urls[0];
+        }
+        else
+        {
+            enableTls = urls[0] == "https";
+            address = urls[1];
+        }
+        // WebSocketを使って接続するように指定します。
+        ITransportConfig transportConfig = new WebSocket.Config(enableTls: enableTls);
+        Connection.Connect(
+            address: address,
+            transportConfig: transportConfig,
+            tokenSource: (token) =>
+            {
+                // アクセス用のトークンを指定します。接続時に発生するイベントにより使用されます。
+                // ここでは固定のトークンを返していますが、随時トークンの更新を行う実装にするとトークンの期限切れを考える必要がなくなります。
+                token(accessTokenforTarget);
+            },
+            nodeId: targetNodeId,
+            completion: (con, exception) =>
+            {
+                if (!(con is Connection connection))
+                {
+                    // 接続失敗。
+                    return;
+                }
+                // 接続成功。
+                this.connectionForTarget = connection;
+                // DownstreamCallの受信を監視するためにコールバックを設定します。
+                connection.E2ECallCallbacks = this; // IConnectionE2ECallCallbacks
+            });
+    }
+
+    #region IConnectionE2ECallCallbacks
+
+    public void OnReceiveCall(Connection connection, DownstreamCall downstreamCall)
+    {
+        // DownstreamCallを受信した際にコールされます。
+        // このサンプルではDownstreamCallを受信したらすぐにリプライコールを送信します。
+        connection.SendReplyCall(
+            upstreamReplyCall:
+            new UpstreamReplyCall(
+                requestCallId: downstreamCall.CallId,
+                destinationNodeId: downstreamCall.SourceNodeId,
+                name: "reply_greeting",
+                type: "string",
+                payload: System.Text.Encoding.UTF8.GetBytes("world")), (exception) =>
+                {
+                    if (exception != null)
+                    {
+                        // リプライコールの送信に失敗。
+                        return;
+                    }
+                    // リプライコールの送信に成功。
+                });
+    }
+
+    public void OnReceiveReplyCall(Connection connection, DownstreamReplyCall downstreamReplyCall)
+    {
+        // DownstreamReplyCallを受信した際にコールされます。
+    }
+
+    #endregion
+}
+```
+
 ## References
 - [APIリファレンス](https://docs.intdash.jp/api/intdash-sdk/csharp/latest/)
   - 過去のバージョンのリファレンスは [こちら](https://docs.intdash.jp/api/intdash-sdk/csharp-versions)
-- [Github](https://github.com/aptpod/iscp-cs)
+- [GitHub](https://github.com/aptpod/iscp-cs)
