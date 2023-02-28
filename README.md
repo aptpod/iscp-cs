@@ -193,7 +193,7 @@ public partial class ExampleForUnity : IDownstreamCallbacks
         {
             case DownstreamMetadata.MetadataType.BaseTime:
                 var baseTime = message.BaseTime.Value;
-                Debug.Log($"Received baseTime[{new DateTime(baseTime.BaseTime_)}], priority[{baseTime.Priority}], name[{baseTime.Priority}]");
+                Debug.Log($"Received baseTime[{baseTime.BaseTime_.ToDateTimeFromUnixTimeTicks()}], priority[{baseTime.Priority}], name[{baseTime.Priority}]");
                 break;
             default: break;
         }
@@ -259,7 +259,7 @@ public partial class ExampleForUnity : IUpstreamCallbacks
                 // 送信するデータポイントを保存したい場合や、アップストリームのエラーをハンドリングしたい場合はコールバックを設定します。
                 upstream.Callbacks = this; // IUpstreamCallbacks
 
-                var baseTime = DateTime.UtcNow.Ticks; // 基準時刻です。
+                var baseTime = DateTime.UtcNow; // 基準時刻です。
 
                 // 基準時刻をiSCPサーバーへ送信します。
                 connection?.SendBaseTime(
@@ -268,7 +268,7 @@ public partial class ExampleForUnity : IUpstreamCallbacks
                         name: "manual",
                         priority: 1000,
                         elapsedTime: 0,
-                        baseTime: baseTime),
+                        baseTime: baseTime.ToUnixTimeTicks()), // 送信する基準時刻はUNIX時刻である必要があります。
                     persist: upstreamPersist,
                     completion: (sendBaseTimeEx) =>
                     {
@@ -285,7 +285,7 @@ public partial class ExampleForUnity : IUpstreamCallbacks
                                 name: "greeting",
                                 type: "string"),
                             dataPoint: new DataPoint(
-                                elapsedTime: DateTime.UtcNow.Ticks - baseTime, // 基準時刻からの経過時間をデータポイントの経過時間として打刻します。
+                                elapsedTime: DateTime.UtcNow.Ticks - baseTime.Ticks, // 基準時刻からの経過時間をデータポイントの経過時間として打刻します。
                                 payload: System.Text.Encoding.UTF8.GetBytes("hello")));
                     });
             });
