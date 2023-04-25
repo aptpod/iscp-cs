@@ -1,0 +1,3667 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>iSCP</name>
+    </assembly>
+    <members>
+        <member name="T:Iscp2.Extensions.ConnectionReflection">
+            <summary>Holder for reflection information generated from extensions/connection.proto</summary>
+        </member>
+        <member name="P:Iscp2.Extensions.ConnectionReflection.Descriptor">
+            <summary>File descriptor for extensions/connection.proto</summary>
+        </member>
+        <member name="F:Iscp2.Extensions.ConnectRequestExtensionFields.AccessTokenFieldNumber">
+            <summary>Field number for the "access_token" field.</summary>
+        </member>
+        <member name="F:Iscp2.Extensions.ConnectRequestExtensionFields.IntdashFieldNumber">
+            <summary>Field number for the "intdash" field.</summary>
+        </member>
+        <member name="F:Iscp2.Extensions.IntdashExtensionFields.ProjectUuidFieldNumber">
+            <summary>Field number for the "project_uuid" field.</summary>
+        </member>
+        <member name="T:Iscp2.Extensions.DownstreamReflection">
+            <summary>Holder for reflection information generated from extensions/downstream.proto</summary>
+        </member>
+        <member name="P:Iscp2.Extensions.DownstreamReflection.Descriptor">
+            <summary>File descriptor for extensions/downstream.proto</summary>
+        </member>
+        <member name="T:Iscp2.Extensions.E2ECallReflection">
+            <summary>Holder for reflection information generated from extensions/e2e_call.proto</summary>
+        </member>
+        <member name="P:Iscp2.Extensions.E2ECallReflection.Descriptor">
+            <summary>File descriptor for extensions/e2e_call.proto</summary>
+        </member>
+        <member name="T:Iscp2.Extensions.PingPongReflection">
+            <summary>Holder for reflection information generated from extensions/ping_pong.proto</summary>
+        </member>
+        <member name="P:Iscp2.Extensions.PingPongReflection.Descriptor">
+            <summary>File descriptor for extensions/ping_pong.proto</summary>
+        </member>
+        <member name="T:Iscp2.Extensions.UpstreamReflection">
+            <summary>Holder for reflection information generated from extensions/upstream.proto</summary>
+        </member>
+        <member name="P:Iscp2.Extensions.UpstreamReflection.Descriptor">
+            <summary>File descriptor for extensions/upstream.proto</summary>
+        </member>
+        <member name="F:Iscp2.Extensions.UpstreamOpenRequestExtensionFields.PersistFieldNumber">
+            <summary>Field number for the "persist" field.</summary>
+        </member>
+        <member name="F:Iscp2.Extensions.UpstreamCloseRequestExtensionFields.CloseSessionFieldNumber">
+            <summary>Field number for the "close_session" field.</summary>
+        </member>
+        <member name="F:Iscp2.Extensions.UpstreamMetadataExtensionFields.PersistFieldNumber">
+            <summary>Field number for the "persist" field.</summary>
+        </member>
+        <member name="T:Iscp2.CommonReflection">
+            <summary>Holder for reflection information generated from common.proto</summary>
+        </member>
+        <member name="P:Iscp2.CommonReflection.Descriptor">
+            <summary>File descriptor for common.proto</summary>
+        </member>
+        <member name="F:Iscp2.StreamChunk.SequenceNumberFieldNumber">
+            <summary>Field number for the "sequence_number" field.</summary>
+        </member>
+        <member name="F:Iscp2.StreamChunk.DataPointGroupsFieldNumber">
+            <summary>Field number for the "data_point_groups" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataPointGroup.DataIdFieldNumber">
+            <summary>Field number for the "data_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataPointGroup.DataIdAliasFieldNumber">
+            <summary>Field number for the "data_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataPointGroup.DataPointsFieldNumber">
+            <summary>Field number for the "data_points" field.</summary>
+        </member>
+        <member name="T:Iscp2.DataPointGroup.DataIdOrAliasOneofCase">
+            <summary>Enum of possible cases for the "data_id_or_alias" oneof.</summary>
+        </member>
+        <member name="F:Iscp2.DataPoint.ElapsedTimeFieldNumber">
+            <summary>Field number for the "elapsed_time" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataPoint.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataID.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataID.TypeFieldNumber">
+            <summary>Field number for the "type" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamFilter.SourceNodeIdFieldNumber">
+            <summary>Field number for the "source_node_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamFilter.DataFiltersFieldNumber">
+            <summary>Field number for the "data_filters" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataFilter.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="F:Iscp2.DataFilter.TypeFieldNumber">
+            <summary>Field number for the "type" field.</summary>
+        </member>
+        <member name="T:Iscp2.ConnectionReflection">
+            <summary>Holder for reflection information generated from connection.proto</summary>
+        </member>
+        <member name="P:Iscp2.ConnectionReflection.Descriptor">
+            <summary>File descriptor for connection.proto</summary>
+        </member>
+        <member name="F:Iscp2.ConnectRequest.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectRequest.ProtocolVersionFieldNumber">
+            <summary>Field number for the "protocol_version" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectRequest.NodeIdFieldNumber">
+            <summary>Field number for the "node_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectRequest.PingIntervalFieldNumber">
+            <summary>Field number for the "ping_interval" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectRequest.PingTimeoutFieldNumber">
+            <summary>Field number for the "ping_timeout" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectRequest.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectResponse.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectResponse.ProtocolVersionFieldNumber">
+            <summary>Field number for the "protocol_version" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectResponse.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectResponse.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.ConnectResponse.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.Disconnect.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.Disconnect.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.Disconnect.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="T:Iscp2.DownstreamReflection">
+            <summary>Holder for reflection information generated from downstream.proto</summary>
+        </member>
+        <member name="P:Iscp2.DownstreamReflection.Descriptor">
+            <summary>File descriptor for downstream.proto</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.DesiredStreamIdAliasFieldNumber">
+            <summary>Field number for the "desired_stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.DownstreamFiltersFieldNumber">
+            <summary>Field number for the "downstream_filters" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.ExpiryIntervalFieldNumber">
+            <summary>Field number for the "expiry_interval" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.DataIdAliasesFieldNumber">
+            <summary>Field number for the "data_id_aliases" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.QosFieldNumber">
+            <summary>Field number for the "qos" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenRequest.OmitEmptyChunkFieldNumber">
+            <summary>Field number for the "omit_empty_chunk" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenResponse.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenResponse.AssignedStreamIdFieldNumber">
+            <summary>Field number for the "assigned_stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenResponse.ServerTimeFieldNumber">
+            <summary>Field number for the "server_time" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenResponse.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenResponse.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpenResponse.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeRequest.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeRequest.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeRequest.DesiredStreamIdAliasFieldNumber">
+            <summary>Field number for the "desired_stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeRequest.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeResponse.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeResponse.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeResponse.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResumeResponse.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCloseRequest.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCloseRequest.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCloseRequest.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCloseResponse.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCloseResponse.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCloseResponse.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCloseResponse.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunk.StreamIdAliasFieldNumber">
+            <summary>Field number for the "stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunk.UpstreamInfoFieldNumber">
+            <summary>Field number for the "upstream_info" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunk.UpstreamAliasFieldNumber">
+            <summary>Field number for the "upstream_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunk.StreamChunkFieldNumber">
+            <summary>Field number for the "stream_chunk" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunk.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="T:Iscp2.DownstreamChunk.UpstreamOrAliasOneofCase">
+            <summary>Enum of possible cases for the "upstream_or_alias" oneof.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAck.StreamIdAliasFieldNumber">
+            <summary>Field number for the "stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAck.AckIdFieldNumber">
+            <summary>Field number for the "ack_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAck.ResultsFieldNumber">
+            <summary>Field number for the "results" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAck.UpstreamAliasesFieldNumber">
+            <summary>Field number for the "upstream_aliases" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAck.DataIdAliasesFieldNumber">
+            <summary>Field number for the "data_id_aliases" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAck.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAckComplete.StreamIdAliasFieldNumber">
+            <summary>Field number for the "stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAckComplete.AckIdFieldNumber">
+            <summary>Field number for the "ack_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAckComplete.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAckComplete.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkAckComplete.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.StreamIdAliasFieldNumber">
+            <summary>Field number for the "stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.BaseTimeFieldNumber">
+            <summary>Field number for the "base_time" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.UpstreamOpenFieldNumber">
+            <summary>Field number for the "upstream_open" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.UpstreamAbnormalCloseFieldNumber">
+            <summary>Field number for the "upstream_abnormal_close" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.UpstreamResumeFieldNumber">
+            <summary>Field number for the "upstream_resume" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.UpstreamNormalCloseFieldNumber">
+            <summary>Field number for the "upstream_normal_close" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.DownstreamOpenFieldNumber">
+            <summary>Field number for the "downstream_open" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.DownstreamAbnormalCloseFieldNumber">
+            <summary>Field number for the "downstream_abnormal_close" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.DownstreamResumeFieldNumber">
+            <summary>Field number for the "downstream_resume" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.DownstreamNormalCloseFieldNumber">
+            <summary>Field number for the "downstream_normal_close" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.SourceNodeIdFieldNumber">
+            <summary>Field number for the "source_node_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadata.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="T:Iscp2.DownstreamMetadata.MetadataOneofCase">
+            <summary>Enum of possible cases for the "metadata" oneof.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadataAck.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadataAck.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadataAck.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamMetadataAck.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamInfo.SessionIdFieldNumber">
+            <summary>Field number for the "session_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamInfo.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamInfo.SourceNodeIdFieldNumber">
+            <summary>Field number for the "source_node_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkResult.StreamIdOfUpstreamFieldNumber">
+            <summary>Field number for the "stream_id_of_upstream" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkResult.SequenceNumberInUpstreamFieldNumber">
+            <summary>Field number for the "sequence_number_in_upstream" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkResult.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkResult.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamChunkResult.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="T:Iscp2.E2ECallReflection">
+            <summary>Holder for reflection information generated from e2e_call.proto</summary>
+        </member>
+        <member name="P:Iscp2.E2ECallReflection.Descriptor">
+            <summary>File descriptor for e2e_call.proto</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCall.CallIdFieldNumber">
+            <summary>Field number for the "call_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCall.RequestCallIdFieldNumber">
+            <summary>Field number for the "request_call_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCall.DestinationNodeIdFieldNumber">
+            <summary>Field number for the "destination_node_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCall.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCall.TypeFieldNumber">
+            <summary>Field number for the "type" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCall.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCall.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCallAck.CallIdFieldNumber">
+            <summary>Field number for the "call_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCallAck.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCallAck.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCallAck.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCall.CallIdFieldNumber">
+            <summary>Field number for the "call_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCall.RequestCallIdFieldNumber">
+            <summary>Field number for the "request_call_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCall.SourceNodeIdFieldNumber">
+            <summary>Field number for the "source_node_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCall.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCall.TypeFieldNumber">
+            <summary>Field number for the "type" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCall.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamCall.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="T:Iscp2.MessageReflection">
+            <summary>Holder for reflection information generated from message.proto</summary>
+        </member>
+        <member name="P:Iscp2.MessageReflection.Descriptor">
+            <summary>File descriptor for message.proto</summary>
+        </member>
+        <member name="F:Iscp2.Message.ConnectRequestFieldNumber">
+            <summary>Field number for the "connect_request" field.</summary>
+        </member>
+        <member name="P:Iscp2.Message.ConnectRequest">
+            <summary>
+            Connect
+            </summary>
+        </member>
+        <member name="F:Iscp2.Message.ConnectResponseFieldNumber">
+            <summary>Field number for the "connect_response" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DisconnectFieldNumber">
+            <summary>Field number for the "disconnect" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamOpenRequestFieldNumber">
+            <summary>Field number for the "upstream_open_request" field.</summary>
+        </member>
+        <member name="P:Iscp2.Message.UpstreamOpenRequest">
+            <summary>
+            Upstream
+            </summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamOpenResponseFieldNumber">
+            <summary>Field number for the "upstream_open_response" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamResumeRequestFieldNumber">
+            <summary>Field number for the "upstream_resume_request" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamResumeResponseFieldNumber">
+            <summary>Field number for the "upstream_resume_response" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamCloseRequestFieldNumber">
+            <summary>Field number for the "upstream_close_request" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamCloseResponseFieldNumber">
+            <summary>Field number for the "upstream_close_response" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamChunkFieldNumber">
+            <summary>Field number for the "upstream_chunk" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamChunkAckFieldNumber">
+            <summary>Field number for the "upstream_chunk_ack" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamMetadataFieldNumber">
+            <summary>Field number for the "upstream_metadata" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamMetadataAckFieldNumber">
+            <summary>Field number for the "upstream_metadata_ack" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamOpenRequestFieldNumber">
+            <summary>Field number for the "downstream_open_request" field.</summary>
+        </member>
+        <member name="P:Iscp2.Message.DownstreamOpenRequest">
+            <summary>
+            Downstream
+            </summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamOpenResponseFieldNumber">
+            <summary>Field number for the "downstream_open_response" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamResumeRequestFieldNumber">
+            <summary>Field number for the "downstream_resume_request" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamResumeResponseFieldNumber">
+            <summary>Field number for the "downstream_resume_response" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamCloseRequestFieldNumber">
+            <summary>Field number for the "downstream_close_request" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamCloseResponseFieldNumber">
+            <summary>Field number for the "downstream_close_response" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamChunkFieldNumber">
+            <summary>Field number for the "downstream_chunk" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamChunkAckFieldNumber">
+            <summary>Field number for the "downstream_chunk_ack" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamChunkAckCompleteFieldNumber">
+            <summary>Field number for the "downstream_chunk_ack_complete" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamMetadataFieldNumber">
+            <summary>Field number for the "downstream_metadata" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamMetadataAckFieldNumber">
+            <summary>Field number for the "downstream_metadata_ack" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.PingFieldNumber">
+            <summary>Field number for the "ping" field.</summary>
+        </member>
+        <member name="P:Iscp2.Message.Ping">
+            <summary>
+            Ping/Pong
+            </summary>
+        </member>
+        <member name="F:Iscp2.Message.PongFieldNumber">
+            <summary>Field number for the "pong" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamCallFieldNumber">
+            <summary>Field number for the "upstream_call" field.</summary>
+        </member>
+        <member name="P:Iscp2.Message.UpstreamCall">
+            <summary>
+            E2E Call
+            </summary>
+        </member>
+        <member name="F:Iscp2.Message.UpstreamCallAckFieldNumber">
+            <summary>Field number for the "upstream_call_ack" field.</summary>
+        </member>
+        <member name="F:Iscp2.Message.DownstreamCallFieldNumber">
+            <summary>Field number for the "downstream_call" field.</summary>
+        </member>
+        <member name="T:Iscp2.Message.MessageOneofCase">
+            <summary>Enum of possible cases for the "message" oneof.</summary>
+        </member>
+        <member name="T:Iscp2.MetadataReflection">
+            <summary>Holder for reflection information generated from metadata.proto</summary>
+        </member>
+        <member name="P:Iscp2.MetadataReflection.Descriptor">
+            <summary>File descriptor for metadata.proto</summary>
+        </member>
+        <member name="F:Iscp2.BaseTime.SessionIdFieldNumber">
+            <summary>Field number for the "session_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.BaseTime.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="F:Iscp2.BaseTime.PriorityFieldNumber">
+            <summary>Field number for the "priority" field.</summary>
+        </member>
+        <member name="F:Iscp2.BaseTime.ElapsedTimeFieldNumber">
+            <summary>Field number for the "elapsed_time" field.</summary>
+        </member>
+        <member name="F:Iscp2.BaseTime.BaseTime_FieldNumber">
+            <summary>Field number for the "base_time" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpen.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpen.SessionIdFieldNumber">
+            <summary>Field number for the "session_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpen.QosFieldNumber">
+            <summary>Field number for the "qos" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamAbnormalClose.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamAbnormalClose.SessionIdFieldNumber">
+            <summary>Field number for the "session_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResume.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResume.SessionIdFieldNumber">
+            <summary>Field number for the "session_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResume.QosFieldNumber">
+            <summary>Field number for the "qos" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamNormalClose.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamNormalClose.SessionIdFieldNumber">
+            <summary>Field number for the "session_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamNormalClose.TotalDataPointsFieldNumber">
+            <summary>Field number for the "total_data_points" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamNormalClose.FinalSequenceNumberFieldNumber">
+            <summary>Field number for the "final_sequence_number" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpen.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpen.DownstreamFiltersFieldNumber">
+            <summary>Field number for the "downstream_filters" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamOpen.QosFieldNumber">
+            <summary>Field number for the "qos" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamAbnormalClose.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResume.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResume.DownstreamFiltersFieldNumber">
+            <summary>Field number for the "downstream_filters" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamResume.QosFieldNumber">
+            <summary>Field number for the "qos" field.</summary>
+        </member>
+        <member name="F:Iscp2.DownstreamNormalClose.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="T:Iscp2.PingPongReflection">
+            <summary>Holder for reflection information generated from ping_pong.proto</summary>
+        </member>
+        <member name="P:Iscp2.PingPongReflection.Descriptor">
+            <summary>File descriptor for ping_pong.proto</summary>
+        </member>
+        <member name="F:Iscp2.Ping.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.Ping.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.Pong.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.Pong.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="T:Iscp2.ResultCodeReflection">
+            <summary>Holder for reflection information generated from result_code.proto</summary>
+        </member>
+        <member name="P:Iscp2.ResultCodeReflection.Descriptor">
+            <summary>File descriptor for result_code.proto</summary>
+        </member>
+        <member name="T:Iscp2.UpstreamReflection">
+            <summary>Holder for reflection information generated from upstream.proto</summary>
+        </member>
+        <member name="P:Iscp2.UpstreamReflection.Descriptor">
+            <summary>File descriptor for upstream.proto</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenRequest.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenRequest.SessionIdFieldNumber">
+            <summary>Field number for the "session_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenRequest.AckIntervalFieldNumber">
+            <summary>Field number for the "ack_interval" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenRequest.ExpiryIntervalFieldNumber">
+            <summary>Field number for the "expiry_interval" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenRequest.DataIdsFieldNumber">
+            <summary>Field number for the "data_ids" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenRequest.QosFieldNumber">
+            <summary>Field number for the "qos" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenRequest.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.AssignedStreamIdFieldNumber">
+            <summary>Field number for the "assigned_stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.AssignedStreamIdAliasFieldNumber">
+            <summary>Field number for the "assigned_stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.DataIdAliasesFieldNumber">
+            <summary>Field number for the "data_id_aliases" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.ServerTimeFieldNumber">
+            <summary>Field number for the "server_time" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamOpenResponse.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeRequest.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeRequest.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeRequest.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeResponse.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeResponse.AssignedStreamIdAliasFieldNumber">
+            <summary>Field number for the "assigned_stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeResponse.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeResponse.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamResumeResponse.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseRequest.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseRequest.StreamIdFieldNumber">
+            <summary>Field number for the "stream_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseRequest.TotalDataPointsFieldNumber">
+            <summary>Field number for the "total_data_points" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseRequest.FinalSequenceNumberFieldNumber">
+            <summary>Field number for the "final_sequence_number" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseRequest.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseResponse.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseResponse.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseResponse.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamCloseResponse.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunk.StreamIdAliasFieldNumber">
+            <summary>Field number for the "stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunk.StreamChunkFieldNumber">
+            <summary>Field number for the "stream_chunk" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunk.DataIdsFieldNumber">
+            <summary>Field number for the "data_ids" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunk.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkAck.StreamIdAliasFieldNumber">
+            <summary>Field number for the "stream_id_alias" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkAck.ResultsFieldNumber">
+            <summary>Field number for the "results" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkAck.DataIdAliasesFieldNumber">
+            <summary>Field number for the "data_id_aliases" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkAck.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamMetadata.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamMetadata.BaseTimeFieldNumber">
+            <summary>Field number for the "base_time" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamMetadata.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="T:Iscp2.UpstreamMetadata.MetadataOneofCase">
+            <summary>Enum of possible cases for the "metadata" oneof.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamMetadataAck.RequestIdFieldNumber">
+            <summary>Field number for the "request_id" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamMetadataAck.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamMetadataAck.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamMetadataAck.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkResult.SequenceNumberFieldNumber">
+            <summary>Field number for the "sequence_number" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkResult.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkResult.ResultStringFieldNumber">
+            <summary>Field number for the "result_string" field.</summary>
+        </member>
+        <member name="F:Iscp2.UpstreamChunkResult.ExtensionFieldsFieldNumber">
+            <summary>Field number for the "extension_fields" field.</summary>
+        </member>
+        <member name="M:IMessageConverter.EncodeTo(iSCP.Message.IMessage)">
+            <summary>
+            EncodeToは、iSCPのメッセージをバイナリへエンコードし、与えられたWriterへ書き込みます。
+            </summary>
+        </member>
+        <member name="M:IMessageConverter.DecodeFrom(System.Byte[])">
+            <summary>
+            DecodeFromは、与えられたWriterから読み出したバイナリを、iSCPのメッセージへデコードしあｍす。
+            </summary>
+        </member>
+        <member name="P:IMessageConverter.Name">
+            <summary>
+            Nameは、このエンコーディング名です。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToInt8(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToUInt8(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToInt16(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToUInt16(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToInt32(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToUInt32(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToInt64(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToUInt64(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToDouble(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToFloat(System.Byte[],System.Boolean)">
+            <summary>
+            数値へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.Boolean,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.UInt16,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.UInt32,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.UInt64,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.Int32,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.SByte,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.Int16,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.Int64,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.Single,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="M:iSCP.ByteArrayExtensions.ToByteArray(System.Double,System.Boolean)">
+            <summary>
+            バイナリ形式へ変換します。
+            </summary>
+        </member>
+        <member name="T:iSCP.DateTimeExtensions">
+            <summary>
+            DateTimeの拡張機能です。
+            </summary>
+        </member>
+        <member name="M:iSCP.DateTimeExtensions.ToUnixTimeTicks(System.DateTime)">
+            <summary>
+            1970-01-01T00:00:00.0000000Zからの経過時間をTicks（1 Tickは100ナノ秒）で返します。
+            </summary>
+        </member>
+        <member name="M:iSCP.DateTimeExtensions.ToDateTimeFromUnixTimeTicks(System.Int64)">
+            <summary>
+            経過時間（単位はTick。1 Tickは100ナノ秒）を1970-01-01T00:00:00.0000000Zに足して、DateTimeで返します。
+            </summary>
+        </member>
+        <member name="M:iSCP.NumberExtensions.AddingResportingOverflow(System.Int32,System.Int32)">
+            <summary>
+            オーバーフローが発生するかチェックします。
+            </summary>
+        </member>
+        <member name="M:iSCP.NumberExtensions.AddingResportingOverflow(System.Int64,System.Int64)">
+            <summary>
+            オーバーフローが発生するかチェックします。
+            </summary>
+        </member>
+        <member name="M:iSCP.NumberExtensions.AddingResportingOverflow(System.UInt64,System.UInt64)">
+            <summary>
+            オーバーフローが発生するかチェックします。
+            </summary>
+        </member>
+        <member name="T:iSCP.Helpers.DispatchGroup">
+            <summary>
+            複数のタスクをまとめて管理するためのグループです。
+            <para>グループにタスクを登録すると、それらのタスクが同じキューまたは別のキューで非同期的に実行されるよう管理することができます。すべてのタスクが終了すると、グループ完了時の処理が実行されます。または、グループ内のすべてのタスクが同期的に処理され完了するまで待機することもできます。</para>
+            </summary>
+        </member>
+        <member name="T:iSCP.Helpers.DispatchQueue">
+            <summary>
+            タスクが順次的にまたは同時に行われるのを管理するオブジェクトです。
+            </summary>
+        </member>
+        <member name="T:iSCP.Helpers.EquatableDictionary`2">
+            <summary>
+            比較可能なDictionaryクラスです。
+            </summary>
+        </member>
+        <member name="T:iSCP.Helpers.Lock">
+            <summary>
+            複数の実行スレッドの操作を調整するオブジェクトです。
+            </summary>
+        </member>
+        <member name="T:iSCP.Helpers.SequenceNumberGenerator">
+            <summary>
+            シーケンス番号を生成するクラスです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Helpers.SequenceNumberGenerator.MAX_VALUE">
+            <summary>
+            最大値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Helpers.SequenceNumberGenerator.INITIAL_VALUE">
+            <summary>
+            初期値。
+            </summary>
+        </member>
+        <member name="M:iSCP.Helpers.SequenceNumberGenerator.#ctor(System.UInt64)">
+            <param name="current">初期値。</param>
+        </member>
+        <member name="M:iSCP.Helpers.SequenceNumberGenerator.Next">
+            <summary>
+            次のシーケンス番号を取得します。
+            <para>数値が最大に到達している場合は `null` を返却します。</para>
+            </summary>
+        </member>
+        <member name="M:iSCP.Helpers.SequenceNumberGenerator.Current">
+            <summary>
+            現在のシーケンス番号を返します。
+            </summary>
+        </member>
+        <member name="T:iSCP.Helpers.TimeUtils">
+            <summary>
+            Ticksからナノ秒などの単位への変換をサポートするユーティリティクラスです（1 Tickは100ナノ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Helpers.TimeUtils.TICKS_USEC">
+            <summary>
+            マイクロ秒 == 10 Ticks。
+            </summary>
+        </member>
+        <member name="F:iSCP.Helpers.TimeUtils.TICKS_MSEC">
+            <summary>
+            ミリ秒 == 10000 Ticks。
+            </summary>
+        </member>
+        <member name="F:iSCP.Helpers.TimeUtils.TICKS_SEC">
+            <summary>
+            1秒 == 10000000 Ticks。
+            </summary>
+        </member>
+        <member name="T:iSCP.Connection">
+            <summary>
+            iSCPのコネクションを表すクラスです。
+            </summary>
+        </member>
+        <member name="M:iSCP.Connection.OpenDownstream(iSCP.Model.DownstreamFilter[],iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.UInt16,System.Int64,System.Action{iSCP.Downstream,System.Exception})">
+            <summary>
+            ダウンストリームを開きます。
+            </summary>
+            <param name="downstreamFilters">ダウンストリームフィルタのリスト。</param>
+            <param name="dataIds">エイリアスを設定するデータIDのリスト。</param>
+            <param name="qos">QoS。現在は `unreliable` のみサポート。</param>
+            <param name="omitEmptyChunk">空チャンク省略フラグ。trueの場合、DownstreamChunk内のDataPointGroupsが空の時、DownstreamChunkの送信を省略します。</param>
+            <param name="expiryInterval">有効期限（秒）。このストリームが異常切断された時点からの有効期限を表します。最小値の `0` は、異常切断されたと同時に有効期限切れとなることを表します。</param>
+            <param name="ackInterval">Ack返却間隔（ミリ秒）。受信したメッセージに対するAckの返却間隔です。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.OpenDownstreamAsync(iSCP.Model.DownstreamFilter[],iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.UInt16,System.Int64)">
+            <summary>
+            ダウンストリームを開きます。
+            </summary>
+            <param name="downstreamFilters">ダウンストリームフィルタのリスト。</param>
+            <param name="dataIds">エイリアスを設定するデータIDのリスト。</param>
+            <param name="qos">QoS。現在は `unreliable` のみサポート。</param>
+            <param name="omitEmptyChunk">空チャンク省略フラグ。trueの場合、DownstreamChunk内のDataPointGroupsが空の時、DownstreamChunkの送信を省略します。</param>
+            <param name="expiryInterval">有効期限（秒）。このストリームが異常切断された時点からの有効期限を表します。最小値の `0` は、異常切断されたと同時に有効期限切れとなることを表します。</param>
+            <param name="ackInterval">Ack返却間隔（ミリ秒）。受信したメッセージに対するAckの返却間隔です。</param>
+        </member>
+        <member name="M:iSCP.Connection.ReopenDownstream(iSCP.Downstream,System.Action{iSCP.Downstream,System.Exception})">
+            <summary>
+            ストリーム設定を引き継いで別ストリームとして再度ダウンストリームを開きます。
+            </summary>
+            <param name="downstream">既存のダウンストリーム。このダウンストリームの設定を引き継ぐ別のダウンストリームが開かれます。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.ReopenDownstreamAsync(iSCP.Downstream)">
+            <summary>
+            ストリーム設定を引き継いで別ストリームとして再度ダウンストリームを開きます。
+            </summary>
+            <param name="downstream">既存のダウンストリーム。このダウンストリームの設定を引き継ぐ別のダウンストリームが開かれます。</param>
+        </member>
+        <member name="M:iSCP.Connection.SendCall(iSCP.Model.UpstreamCall,System.Action{System.Exception})">
+            <summary>
+            E2Eコールを送信します。
+            </summary>
+            <param name="upstreamCall">E2Eコール。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+            <returns>コールID。</returns>
+        </member>
+        <member name="M:iSCP.Connection.SendCallAsync(iSCP.Model.UpstreamCall)">
+            <summary>
+            E2Eコールを送信します。
+            </summary>
+            <param name="upstreamCall">E2Eコール。</param>
+            <returns>(コールID, エラー)。</returns>
+        </member>
+        <member name="M:iSCP.Connection.SendReplyCall(iSCP.Model.UpstreamReplyCall,System.Action{System.Exception})">
+            <summary>
+            E2Eコールのリプライを送信します。
+            </summary>
+            <param name="upstreamReplyCall">E2Eリプライコール。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+            <returns>コールID。</returns>
+        </member>
+        <member name="M:iSCP.Connection.SendReplyCallAsync(iSCP.Model.UpstreamReplyCall)">
+            <summary>
+            E2Eコールのリプライを送信します。
+            </summary>
+            <param name="upstreamReplyCall">E2Eリプライコール。</param>
+            <returns>(コールID, エラー)。</returns>
+        </member>
+        <member name="M:iSCP.Connection.SendCallAndWaitReplyCall(iSCP.Model.UpstreamCall,System.Action{System.Nullable{iSCP.Model.DownstreamReplyCall},System.Exception})">
+            <summary>
+            E2Eコールを送信し、リプライコールを受信します。
+            </summary>
+            <param name="upstreamCall">E2Eコール。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+            <returns>コールID。</returns>
+        </member>
+        <member name="M:iSCP.Connection.SendCallAndWaitReplyCallAsync(iSCP.Model.UpstreamCall)">
+            <summary>
+            E2Eコールを送信し、リプライコールを受信します。
+            </summary>
+            <param name="upstreamCall">E2Eコール。</param>
+            <returns>(コールID, E2Eリプライコール, エラー)。</returns>
+        </member>
+        <member name="M:iSCP.Connection.SendBaseTime(iSCP.Model.BaseTime,System.Boolean,System.Action{System.Exception})">
+            <summary>
+            基準時刻を送信します。
+            </summary>
+            <param name="baseTime">基準時刻。</param>
+            <param name="persist">永続化するかどうか。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.SendBaseTimeAsync(iSCP.Model.BaseTime,System.Boolean)">
+            <summary>
+            基準時刻を送信します。
+            </summary>
+            <param name="baseTime">基準時刻。</param>
+            <param name="persist">永続化するかどうか。</param>
+            <returns></returns>
+        </member>
+        <member name="M:iSCP.Connection.OpenUpstream(System.String,System.UInt16,System.UInt16,iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.Nullable{iSCP.Model.FlushPolicy},System.Int64,System.Action{iSCP.Upstream,System.Exception})">
+            <summary>
+            アップストリームを開きます。
+            </summary>
+            <param name="sessionId">セッションID。</param>
+            <param name="ackInterval">Ack返却間隔（ミリ秒）。このストリームで送信されたデータに対する確認応答の間隔を表します。`0` が設定された場合、ブローカーは1つの `UpstreamChunk` メッセージごとに 1つの `UpstreamChunkAck` メッセージを返却します。</param>
+            <param name="expiryInterval">有効期限（秒）。このストリームが異常切断された時点からの有効期限を表します。最小値の `0` は、異常切断されたと同時に有効期限切れとなることを表します。</param>
+            <param name="dataIds">送信予定のデータIDのリスト。送信されるデータのデータIDが `dataIDs` に含まれていなかった場合、自動的にそのデータIDが `dataIDs` に追加されます（そのため、`dataIDs` に空のリストが設定されていても問題ありません）。</param>
+            <param name="qos">QoS。現在は `unreliable` のみサポート。</param>
+            <param name="persist">永続化するかどうか。</param>
+            <param name="flushPolicy">データポイントのフラッシュポリシー。</param>
+            <param name="closeTimeout">クローズのタイムアウト（ミリ秒）。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.OpenUpstreamAsync(System.String,System.UInt16,System.UInt16,iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.Nullable{iSCP.Model.FlushPolicy},System.Int64)">
+            <summary>
+            アップストリームを開きます。
+            </summary>
+            <param name="sessionId">セッションID。</param>
+            <param name="ackInterval">Ack返却間隔（ミリ秒）。このストリームで送信されたデータに対する確認応答の間隔を表します。`0` が設定された場合、ブローカーは1つの `UpstreamChunk` メッセージごとに 1つの `UpstreamChunkAck` メッセージを返却します。</param>
+            <param name="expiryInterval">有効期限（秒）。このストリームが異常切断された時点からの有効期限を表します。最小値の `0` は、異常切断されたと同時に有効期限切れとなることを表します。</param>
+            <param name="dataIds">送信予定のデータIDのリスト。送信されるデータのデータIDが `dataIDs` に含まれていなかった場合、自動的にそのデータIDが `dataIDs` に追加されます（そのため、`dataIDs` に空のリストが設定されていても問題ありません）。</param>
+            <param name="qos">QoS。現在は `unreliable` のみサポート。</param>
+            <param name="persist">永続化するかどうか。</param>
+            <param name="flushPolicy">データポイントのフラッシュポリシー。</param>
+            <param name="closeTimeout">クローズのタイムアウト（ミリ秒）。</param>
+        </member>
+        <member name="M:iSCP.Connection.ReopenUpstream(iSCP.Upstream,System.Boolean,System.Action{iSCP.Upstream,System.Exception})">
+            <summary>
+            ストリーム設定を引き継いで別ストリームとして再度アップストリームを開きます。
+            </summary>
+            <param name="upstream">既存のアップストリーム。このアップストリームの設定を引き継ぐ別のアップストリームが開かれます。</param>
+            <param name="handoverDataPoints">未送信のデータポイントが存在すれば引き継ぐかどうか。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.ReopenUpstreamAsync(iSCP.Upstream)">
+            <summary>
+            ストリーム設定を引き継いで別ストリームとして再度アップストリームを開きます。
+            </summary>
+            <param name="upstream">既存のアップストリーム。このアップストリームの設定を引き継ぐ別のアップストリームが開かれます。</param>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_PING_TIMEOUT">
+            <summary>
+            Pingタイムアウトのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_PING_INTERVAL">
+            <summary>
+            Pingを送信する間隔のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_AUTO_RECONNECT">
+            <summary>
+            自動で再接続するかどうかのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_RECONNECT_BASE_INTERVAL">
+            <summary>
+            自動で再接続する際の、リトライ間隔の初期値のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_RECONNECT_MAX_INTERVAL">
+            <summary>
+            自動で再接続する際の、リトライ間隔の最大値のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_ENCODING">
+            <summary>
+            エンコーディング名のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.Tag">
+            <summary>
+            オブジェクトを識別するためのタグ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.Callbacks">
+            <summary>
+            コネクションで発生するイベントのコールバック。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.E2ECallCallbacks">
+            <summary>
+            コネクションで発生するE2Eコールイベントのコールバック。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.ProtocolVersion">
+            <summary>
+            プロトコルバージョン。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.TransportConfig">
+            <summary>
+            トランスポート用のコンフィグ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.Address">
+            <summary>
+            アドレス。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.NodeId">
+            <summary>
+            ノードID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.ProjectUuid">
+            <summary>
+            プロジェクトID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.PingInterval">
+            <summary>
+            pingを送信する間隔（秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.PingTimeout">
+            <summary>
+            pingを送信後、pongが返却されるまでのタイムアウト時間（秒）。
+            </summary>
+        </member>
+        <member name="P:iSCP.Connection.TokenSource">
+            <summary>
+            トークンソース。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.AutoReconnect">
+            <summary>
+            自動で再接続するかどうか。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.ReconnectBaseInterval">
+            <summary>
+            自動で再接続する際の、リトライ間隔の初期値（ミリ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.ReconnectMaxInterval">
+            <summary>
+            自動で再接続する際の、リトライ間隔の最大値（ミリ秒）。
+            </summary>
+        </member>
+        <member name="P:iSCP.Connection.IsReconnecting">
+            <summary>
+            再接続中かどうか。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.Encoding">
+            <summary>
+            エンコーディング名。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.Converter">
+            <summary>
+            エンコーディング方法。
+            </summary>
+        </member>
+        <member name="P:iSCP.Connection.IsOpen">
+            <summary>
+            接続処理中かどうか。
+            </summary>
+        </member>
+        <member name="P:iSCP.Connection.IsConnecting">
+            <summary>
+            実際にコネクションが接続中かどうか。
+            </summary>
+        </member>
+        <member name="M:iSCP.Connection.#ctor(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,EncodingName)">
+            <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
+            <param name="transportConfig">トランスポートの設定。</param>
+            <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
+            <param name="nodeId">ノードID。</param>
+            <param name="projectUuid">プロジェクトID。</param>
+            <param name="pingTimeout">Pingタイムアウト（秒）。タイムアウトが発生した場合トランスポートを切断します。</param>
+            <param name="pingInterval">Ping間隔（秒）。</param>
+            <param name="autoReconnect">自動で再接続するかどうか。</param>
+            <param name="reconnectBaseInterval">自動で再接続する際の、リトライ間隔の初期値（ミリ秒）。再接続に失敗すると、間隔を倍にしながらリトライを繰り返します。</param>
+            <param name="reconnectMaxInterval">自動で再接続する際の、リトライ間隔の最大値（ミリ秒）。</param>
+            <param name="encoding">エンコーディング名。</param>
+        </member>
+        <member name="M:iSCP.Connection.Connect(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks,System.Action{iSCP.Connection,System.Exception})">
+            <summary>
+            接続を行います。
+            </summary>
+            <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
+            <param name="transportConfig">トランスポートの設定。</param>
+            <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
+            <param name="nodeId">ノードID。</param>
+            <param name="projectUuid">プロジェクトID。</param>
+            <param name="pingTimeout">Pingタイムアウト（秒）。タイムアウトが発生した場合トランスポートを切断します。</param>
+            <param name="pingInterval">Ping間隔（秒）。</param>
+            <param name="autoReconnect">自動で再接続するかどうか。</param>
+            <param name="reconnectBaseInterval">自動で再接続する際の、リトライ間隔の初期値（ミリ秒）。再接続に失敗すると、間隔を倍にしながらリトライを繰り返します。</param>
+            <param name="reconnectMaxInterval">自動で再接続する際の、リトライ間隔の最大値（ミリ秒）。</param>
+            <param name="encoding">エンコーディング名。</param>
+            <param name="callbacks">コネクションで発生するイベントをハンドリングするインターフェース。</param>
+            <param name="e2ECallCallbacks">コネクションで発生するE2Eコールイベントをハンドリングするインターフェース。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.ConnectAsync(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks)">
+            <summary>
+            接続を行います。
+            </summary>
+            <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
+            <param name="transportConfig">トランスポートの設定。</param>
+            <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
+            <param name="nodeId">ノードID。</param>
+            <param name="projectUuid">プロジェクトID。</param>
+            <param name="pingTimeout">Pingタイムアウト（秒）。タイムアウトが発生した場合トランスポートを切断します。</param>
+            <param name="pingInterval">Ping間隔（秒）。</param>
+            <param name="autoReconnect">自動で再接続するかどうか。</param>
+            <param name="reconnectBaseInterval">自動で再接続する際の、リトライ間隔の初期値（ミリ秒）。再接続に失敗すると、間隔を倍にしながらリトライを繰り返します。</param>
+            <param name="reconnectMaxInterval">自動で再接続する際の、リトライ間隔の最大値（ミリ秒）。</param>
+            <param name="encoding">エンコーディング名。</param>
+            <param name="callbacks">コネクションで発生するイベントをハンドリングするインターフェース。</param>
+            <param name="e2ECallCallbacks">コネクションで発生するE2Eコールイベントをハンドリングするインターフェース。</param>
+        </member>
+        <member name="M:iSCP.Connection.Connect(System.Action{System.Exception})">
+            <summary>
+            iSCPで接続します。
+            </summary>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.ConnectAsync">
+            <summary>
+            iSCPで接続します。
+            </summary>
+        </member>
+        <member name="M:iSCP.Connection.SetupPingReceiver">
+            <summary>
+            Pingがブローカーから送られてきたらPongを返却するレシーバーのセットアップ
+            </summary>
+        </member>
+        <member name="M:iSCP.Connection.SetupDisconnectChecker">
+            <summary>
+            ディスコネクト判定をするチェッカーのセットアップ
+            </summary>
+        </member>
+        <member name="M:iSCP.Connection.Close(System.Action{System.Exception})">
+            <summary>
+            コネクションを閉じます。
+            <para>オープン済みのストリームは全て閉じられます。</para>
+            </summary>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Connection.CloseAsync">
+            <summary>
+            コネクションを閉じます。
+            <para>オープン済みのストリームは全て閉じられます。</para>
+            </summary>
+        </member>
+        <member name="M:iSCP.Connection.Reconnect(System.Action{System.Exception})">
+            <summary>
+            再接続を行います。
+            </summary>
+        </member>
+        <member name="T:iSCP.IConnectionCallbacks">
+            <summary>
+            コネクションで発生するイベントのコールバックです。
+            </summary>
+        </member>
+        <member name="M:iSCP.IConnectionCallbacks.OnReconnect(iSCP.Connection)">
+            <summary>
+            コネクションが再オープンされた際にコールされます。
+            </summary>
+            <param name="connection">コネクション。</param>
+        </member>
+        <member name="M:iSCP.IConnectionCallbacks.OnDisconnect(iSCP.Connection)">
+            <summary>
+            コネクションがクローズされた際にコールされます。
+            </summary>
+            <param name="connection">コネクション。</param>
+        </member>
+        <member name="M:iSCP.IConnectionCallbacks.OnFailWithError(iSCP.Connection,System.Exception)">
+            <summary>
+            エラーが発生した際にコールされます。
+            </summary>
+            <param name="connection">コネクション。</param>
+            <param name="error">エラー情報。</param>
+        </member>
+        <member name="T:iSCP.IConnectionE2ECallCallbacks">
+            <summary>
+            コネクションで発生するE2Eコールイベントのコールバックです。
+            </summary>
+        </member>
+        <member name="M:iSCP.IConnectionE2ECallCallbacks.OnReceiveCall(iSCP.Connection,iSCP.Model.DownstreamCall)">
+            <summary>
+            E2Eコールを受信した際にコールされます。
+            </summary>
+            <param name="connection">コネクション。</param>
+            <param name="downstreamCall">E2Eコール。</param>
+        </member>
+        <member name="M:iSCP.IConnectionE2ECallCallbacks.OnReceiveReplyCall(iSCP.Connection,iSCP.Model.DownstreamReplyCall)">
+            <summary>
+            E2Eリプライコールを受信した際にコールされます。
+            </summary>
+            <param name="connection">コネクション。</param>
+            <param name="downstreamReplyCall">E2Eリプライコール。</param>
+        </member>
+        <member name="T:iSCP.IscpConsts">
+            <summary>
+            iSCPの定数が定義されるクラスです。
+            </summary>
+        </member>
+        <member name="F:iSCP.IscpConsts.LIBRARY_VERSION">
+            <summary>
+            このライブラリのバージョン。
+            </summary>
+        </member>
+        <member name="F:iSCP.IscpConsts.SUPPORTED_PROTOCOL_VERSION">
+            <summary>
+             対応しているプロトコルバージョン。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.IscpException">
+            <summary>
+            iSCPクライアント内部で発生するエラーの定義です。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.IscpException.TransportClosedException">
+            <summary>
+            トランスポートが閉じられている際にトランスポートに対して読み書きをしようとした際に出力されます。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.IscpException.StreamClosedException">
+            <summary>
+            ストリームが既にクローズされている際に何らかの処理を実行しようとした際に出力されます。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.IscpException.MalformedMessageException">
+            <summary>
+            メッセージのエンコードやデコードに失敗した際に出力されます。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.IscpException.FailedMessageException">
+            <summary>
+            iSCPでの通信中に、失敗を意味する結果コードが含まれたメッセージを受信した場合に出力されます。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.IscpException.TimeoutException">
+            <summary>
+            iSCP通信中に結果コードが返却されずタイムアウトした際に出力されます。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.IscpException.UnexpectedException">
+            <summary>
+            定義されていないエラーが発生した際に出力されます。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.FlushPolicy">
+            <summary>
+            Upstreamのフラッシュの方法について定義します。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.DEFAULT_FLUSH_TYPE">
+            <summary>
+            データポイントのフラッシュポリシーのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.DEFAULT_BUFFER_SIZE">
+            <summary>
+            フラッシュのバッファサイズのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.DEFAULT_INTERVAL">
+            <summary>
+            フラッシュの送信間隔のデフォルト値。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.FlushPolicy.Immediately">
+            <summary>
+            即時フラッシュを行うFlushPolicy。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.FlushPolicy.IntervalOnly(System.Int64)">
+            <summary>
+            インターバルによるフラッシュを行うFlushPolicy。
+            </summary>
+            <param name="interval">フラッシュの間隔（ミリ秒）。</param>
+        </member>
+        <member name="M:iSCP.Model.FlushPolicy.IntervalOrBufferSize(System.Int64,System.UInt32)">
+            <summary>
+            インターバル、またはバッファサイズによるフラッシュを行うFlushPolicy。
+            </summary>
+            <param name="interval">フラッシュの間隔（ミリ秒）。</param>
+            <param name="bufferSize">フラッシュのバッファサイズ。</param>
+        </member>
+        <member name="M:iSCP.Model.FlushPolicy.BufferSizeOnly(System.UInt32)">
+            <summary>
+            バッファサイズによるフラッシュを行うFlushPolicy。
+            </summary>
+            <param name="bufferSize">フラッシュのバッファサイズ。</param>
+        </member>
+        <member name="M:iSCP.Model.FlushPolicy.NoFlush">
+            <summary>
+            フラッシュを行わないFlushPolicy。
+            <para>このFlushPolicyは明示的なフラッシュを強制します。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.Type">
+            <summary>
+            Upstreamのフラッシュ方法。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.Interval">
+            <summary>
+            フラッシュの間隔（ミリ秒）。
+            <para>`FlushPolicy` が `IntervalOnly` または `IntervalOrBufferSize` の場合のみ有効となります。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.BufferSize">
+            <summary>
+            フラッシュのバッファサイズ。
+            <para>`FlushPolicy` が `BufferSizeOnly` または `IntervalOrBufferSize` の場合のみ有効となります。</para>
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.FlushPolicy.#ctor(iSCP.Model.FlushPolicy.FlushType,System.Int64,System.UInt32)">
+            <param name="type">Upstreamのフラッシュ方法。</param>
+            <param name="interval">フラッシュの間隔（ミリ秒）。</param>
+            <param name="bufferSize">フラッシュのバッファサイズ。</param>
+        </member>
+        <member name="T:iSCP.Model.FlushPolicy.FlushType">
+            <summary>
+            Upstreamのフラッシュ方法です。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.FlushType.None">
+            <summary>
+            フラッシュを行わない。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.FlushType.IntervalOnly">
+            <summary>
+            時間間隔によるフラッシュのみ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.FlushType.BufferSizeOnly">
+            <summary>
+            バッファサイズによるフラッシュのみ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.FlushType.IntervalOrBufferSize">
+            <summary>
+            時間間隔によるフラッシュ、またはバッファサイズによるフラッシュ。どちらかの条件を満たしたらフラッシュする。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.FlushPolicy.FlushType.Immediately">
+            <summary>
+            即時フラッシュ。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.QoS">
+            <summary>
+            QoSを表します。
+            <para>QoS（Quality of Service）は、トランスポートのコネクションが切断された場合のデータの取扱を規定します。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.QoS.Unreliable">
+            <summary>
+            低信頼。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.QoS.Reliable">
+            <summary>
+            高信頼。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.QoS.Partial">
+            <summary>
+            信頼性のあるトランスポートを利用する低信頼。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamFilter">
+            <summary>
+            ダウンストリームフィルタです。
+            <para>ダウンストリームフィルタはダウンストリームにおいてブローカーからノードに送信するデータを特定します。</para>
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DownstreamFilter.AllFor(System.String)">
+            <summary>
+            指定したノードが送信するすべてのデータを取得するフィルタです。
+            </summary>
+            <param name="sourceNodeId">データ取得対象とする送信元ノード。</param>
+        </member>
+        <member name="F:iSCP.Model.DownstreamFilter.SourceNodeId">
+            <summary>
+            送信元ノードID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamFilter.DataFilters">
+            <summary>
+            データフィルタのリスト。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DownstreamFilter.#ctor(System.String,iSCP.Model.DataFilter[])">
+            <param name="sourceNodeId">送信元ノードID。</param>
+            <param name="dataFilters">データフィルタのリスト。</param>
+        </member>
+        <member name="T:iSCP.Model.DataFilter">
+            <summary>
+            受信するデータを指定するためのデータフィルタです。
+            <para>名称や型の指定において階層構造を表現したいときには、特殊文字 `/` をセパレータとして使用することができます。</para>
+            <para>特殊文字 `#` はマルチレベルワイルドカードです。</para>
+            <para>- フィルタが `#` のとき、 `name` はマッチします。</para>
+            <para>- フィルタが `#` のとき、` group/name` はマッチします。</para>
+            <para>- フィルタが `group/#` のとき、 `group/name` はマッチします。</para>
+            <para>- フィルタが `group/#` のとき、 `group/sub-group/name` はマッチします。</para>
+            <para>- フィルタが `group/#` のとき、 `other-group/name` はマッチしません。</para>
+            </summary>
+        </member>
+        <member name="P:iSCP.Model.DataFilter.All">
+            <summary>
+            全データ型、全データ名称を受信対象とするデータフィルタです。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DataFilter.Parse(System.String)">
+            <summary>
+            DataFilterの文字列表現からDataFilterを生成します。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataFilter.Name">
+            <summary>
+            名称。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataFilter.Type">
+            <summary>
+            型。
+            </summary>
+        </member>
+        <member name="P:iSCP.Model.DataFilter.String">
+            <summary>
+            データフィルタの文字列表現です。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DataFilter.#ctor(System.String,System.String)">
+            <param name="name">名称。</param>
+            <param name="type">型。</param>
+        </member>
+        <member name="T:iSCP.Model.DataId">
+            <summary>
+            データポイントの、名称とデータ型を表す識別子です。
+            <para>おもに、ブローカーおよびノードでのデータの意味と型の特定、ダウンストリームフィルタにて指定された受信条件に各時系列データポイントが合致するかどうかの判定、などに使用されます。</para>
+            <para>特殊文字 `/` はセパレータです。名称/型の階層構造を表現することができます。</para>
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DataId.Parse(System.String)">
+            <summary>
+            データIDの文字列表現からDataIdを生成します。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DataId.IsValid(System.String)">
+            <summary>
+            データIDに使用される名前及び型に使用する文字列が有効かどうか調べます。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataId.Name">
+            <summary>
+            名称。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataId.Type">
+            <summary>
+            型。
+            </summary>
+        </member>
+        <member name="P:iSCP.Model.DataId.IsNameValid">
+            <summary>
+            設定中の名前が有効かどうか。
+            </summary>
+        </member>
+        <member name="P:iSCP.Model.DataId.IsTypeValid">
+            <summary>
+            設定中の型が有効かどうか。
+            </summary>
+        </member>
+        <member name="P:iSCP.Model.DataId.String">
+            <summary>
+            データIDの文字列表現です。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DataId.#ctor(System.String,System.String)">
+            <param name="name">名称。</param>
+            <param name="type">型。</param>
+        </member>
+        <member name="T:iSCP.Model.UpstreamChunk">
+            <summary>
+            アップストリームチャンクを表します。
+            <para>上り用のストリームチャンクです。</para>
+            <para>iSCP におけるデータ伝送は、このチャンク単位で行われます。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamChunk.SequenceNumber">
+            <summary>
+            送信予定のシーケンス番号。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamChunk.DataPointGroups">
+            <summary>
+            送信予定のデータポイントをデータIDごとにまとめた集合のリスト。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamChunk.DataPointCount">
+            <summary>
+            送信予定のデータポイント数。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamChunk.PayloadSize">
+            <summary>
+            送信予定のペイロードサイズ。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.UpstreamChunkAck">
+            <summary>
+             アップストリームチャンクに対する確認応答です。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamChunkAck.SequenceNumber">
+            <summary>
+            受信したシーケンス番号。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamChunkAck.ResultCode">
+            <summary>
+            受信した結果コード。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamChunkAck.ResultString">
+            <summary>
+            受信した結果文字列。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamChunk">
+            <summary>
+            ダウンストリームチャンクを表します。
+            <para>下り用のストリームチャンクです。</para>
+            <para>iSCP におけるデータ伝送は、このチャンク単位で行われます。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamChunk.SequenceNumber">
+            <summary>
+            シーケンス番号。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamChunk.DataPointGroups">
+            <summary>
+            データポイントグループのリスト。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamChunk.UpstreamInfo">
+            <summary>
+            アップストリーム情報。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.UpstreamInfo">
+            <summary>
+            アップストリーム情報。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamInfo.SessionId">
+            <summary>
+            セッションID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamInfo.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamInfo.SourceNodeId">
+            <summary>
+            生成元ノードID。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DataPointGroup">
+            <summary>
+            ストリームチャンクの中のデータポイントをデータIDごとにまとめた集合です。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataPointGroup.DataId">
+            <summary>
+            データID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataPointGroup.DataPoints">
+            <summary>
+            データポイントのリスト。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DataPointGroup.#ctor(iSCP.Model.DataId,System.Collections.Generic.List{iSCP.Model.DataPoint})">
+            <param name="dataId">データID。</param>
+            <param name="dataPoints">データポイントのリスト。</param>
+        </member>
+        <member name="M:iSCP.Model.DataPointGroup.#ctor(iSCP.Model.DataId,iSCP.Model.DataPoint[])">
+            <param name="dataId">データID。</param>
+            <param name="dataPoints">データポイントのリスト。</param>
+        </member>
+        <member name="T:iSCP.Model.DataPoint">
+            <summary>
+            データポイントです。
+            <para>データポイントは、経過時間を付与されたバイナリデータです。 バイナリデータのことをペイロードと呼びます。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataPoint.ElapsedTime">
+            <summary>
+            経過時間（100ナノ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DataPoint.Payload">
+            <summary>
+            ペイロード。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.DataPoint.#ctor(System.Int64,System.Byte[])">
+            <param name="elapsedTime">経過時間（100ナノ秒）。</param>
+            <param name="payload">ペイロード。</param>
+        </member>
+        <member name="T:iSCP.Model.BaseTime">
+            <summary>
+            基準時刻です。
+            <para>あるセッションの基準となる時刻です。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.BaseTime.SessionId">
+            <summary>
+            セッションID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.BaseTime.Name">
+            <summary>
+            基準時刻の名称。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.BaseTime.Priority">
+            <summary>
+            優先度。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.BaseTime.ElapsedTime">
+            <summary>
+            経過時間（100ナノ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.BaseTime.BaseTime_">
+            <summary>
+            基準時刻（100ナノ秒）。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.BaseTime.#ctor(System.String,System.String,System.UInt32,System.Int64,System.Int64)">
+            <param name="sessionId">セッションID。</param>
+            <param name="name">基準時刻の名称。</param>
+            <param name="priority">優先度。</param>
+            <param name="elapsedTime">経過時間（100ナノ秒）。</param>
+            <param name="baseTime">基準時刻（100ナノ秒）。</param>
+        </member>
+        <member name="T:iSCP.Model.DownstreamAbnormalClose">
+            <summary>
+            あるダウンストリームが異常切断したことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamAbnormalClose.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamNormalClose">
+            <summary>
+            あるダウンストリームが正常切断したことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamNormalClose.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamOpen">
+            <summary>
+            あるダウンストリームが開いたことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamOpen.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamOpen.DownstreamFilters">
+            <summary>
+            ダウンストリームフィルタのリスト。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamOpen.Qos">
+            <summary>
+            QoS。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamResume">
+            <summary>
+            あるダウンストリームが再開したことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamResume.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamResume.DownstreamFilters">
+            <summary>
+            ダウンストリームフィルタのリスト。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamResume.Qos">
+            <summary>
+            QoS。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.UpstreamAbnormalClose">
+            <summary>
+            あるアップストリームが異常切断したことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamAbnormalClose.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamAbnormalClose.SessionId">
+            <summary>
+            セッションID。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.UpstreamNormalClose">
+            <summary>
+            あるアップストリームが正常切断したことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamNormalClose.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamNormalClose.SessionId">
+            <summary>
+            セッションID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamNormalClose.TotalDataPoints">
+            <summary>
+            総データポイント数。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamNormalClose.FinalSequenceNumber">
+            <summary>
+            最終シーケンス番号。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.UpstreamOpen">
+            <summary>
+            あるアップストリームが開いたことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamOpen.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamOpen.SessionId">
+            <summary>
+            セッションID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamOpen.Qos">
+            <summary>
+            QoS。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.UpstreamResume">
+            <summary>
+            あるアップストリームが再開したことを知らせるメタデータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamResume.StreamId">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamResume.SessionId">
+            <summary>
+            セッションID。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamMetadata">
+            <summary>
+            ダウンストリームメタデータです。
+            <para>メタデータを格納してブローカーからノードへ転送する為のメッセージです。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.SourceNodeId">
+            <summary>
+            生成元ノードID。
+            </summary>
+        </member>
+        <member name="P:iSCP.Model.DownstreamMetadata.Type">
+            <summary>
+            メタ情報の識別値。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamMetadata.MetadataType">
+            <summary>
+            メタデータの識別値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.BaseTime">
+            <summary>
+            基準時刻のメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.UpstreamOpen">
+            <summary>
+            あるアップストリームが開いたことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.UpstreamAbnormalClose">
+            <summary>
+            あるアップストリームが異常切断したことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.UpstreamResume">
+            <summary>
+            あるアップストリームが再開したことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.UpstreamNormalClose">
+            <summary>
+            あるアップストリームが正常切断したことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.DownstreamOpen">
+            <summary>
+            あるダウンストリームが開いたことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.DownstreamAbnormalClose">
+            <summary>
+            あるダウンストリームが異常切断したことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.DownstreamResume">
+            <summary>
+            あるダウンストリームが再開したことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamMetadata.MetadataType.DownstreamNormalClose">
+            <summary>
+            あるダウンストリームが正常切断したことを知らせるメタデータ。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.UpstreamCall">
+            <summary>
+            アップストリームコールです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamCall.DestinationNodeId">
+            <summary>
+            宛先ノードID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamCall.Name">
+            <summary>
+            名称。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamCall.Type">
+            <summary>
+            型。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamCall.Payload">
+            <summary>
+            ペイロード。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.UpstreamCall.#ctor(System.String,System.String,System.String,System.Byte[])">
+            <param name="destinationNodeId">宛先ノードID。</param>
+            <param name="name">名称。</param>
+            <param name="type">型。</param>
+            <param name="payload">ペイロード。</param>
+        </member>
+        <member name="T:iSCP.Model.UpstreamReplyCall">
+            <summary>
+            アップストリームリプライコールです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamReplyCall.RequestCallId">
+            <summary>
+            リクエストコールコールID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamReplyCall.DestinationNodeId">
+            <summary>
+            宛先ノードID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamReplyCall.Name">
+            <summary>
+            名称。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamReplyCall.Type">
+            <summary>
+            型。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.UpstreamReplyCall.Payload">
+            <summary>
+            ペイロード。
+            </summary>
+        </member>
+        <member name="M:iSCP.Model.UpstreamReplyCall.#ctor(System.String,System.String,System.String,System.String,System.Byte[])">
+            <param name="requestCallId">リクエストコールID。</param>
+            <param name="destinationNodeId">宛先ノードID。</param>
+            <param name="name">名称。</param>
+            <param name="type">型。</param>
+            <param name="payload">ペイロード。</param>
+        </member>
+        <member name="T:iSCP.Model.DownstreamCall">
+            <summary>
+            ダウンストリームコールです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamCall.CallId">
+            <summary>
+            コールID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamCall.SourceNodeId">
+            <summary>
+            送信元ノードID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamCall.Name">
+            <summary>
+            名称。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamCall.Type">
+            <summary>
+            型。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamCall.Payload">
+            <summary>
+            ペイロード。
+            </summary>
+        </member>
+        <member name="T:iSCP.Model.DownstreamReplyCall">
+            <summary>
+            ダウンストリームリプライコールです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamReplyCall.RequestCallId">
+            <summary>
+            リクエストコールID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamReplyCall.SourceNodeId">
+            <summary>
+            送信元ノードID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamReplyCall.Name">
+            <summary>
+            名称。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamReplyCall.Type">
+            <summary>
+            型。
+            </summary>
+        </member>
+        <member name="F:iSCP.Model.DownstreamReplyCall.Payload">
+            <summary>
+            ペイロード。
+            </summary>
+        </member>
+        <member name="T:iSCP.IDownstreamCallbacks">
+            <summary>
+            ダウンストリームで発生するイベントのコールバックです。
+            </summary>
+        </member>
+        <member name="M:iSCP.IDownstreamCallbacks.OnReceiveChunk(iSCP.Downstream,iSCP.Model.DownstreamChunk)">
+            <summary>
+            ダウンストリームチャンクを受信した際にコールされます。
+            </summary>
+            <param name="downstream">ダウンストリーム。</param>
+            <param name="message">ダウンストリームチャンク。</param>
+        </member>
+        <member name="M:iSCP.IDownstreamCallbacks.OnReceiveMetadata(iSCP.Downstream,iSCP.Model.DownstreamMetadata)">
+            <summary>
+            メタデータを受信した際にコールされます。
+            </summary>
+            <param name="downstream">ダウンストリーム。</param>
+            <param name="message">ダウンストリームメタデータ。</param>
+        </member>
+        <member name="M:iSCP.IDownstreamCallbacks.OnFailWithError(iSCP.Downstream,System.Exception)">
+            <summary>
+            エラーが発生した際にコールされます。
+            </summary>
+            <param name="downstream">ダウンストリーム。</param>
+            <param name="error">エラー情報。</param>
+        </member>
+        <member name="M:iSCP.IDownstreamCallbacks.OnCloseWithError(iSCP.Downstream,System.Exception)">
+            <summary>
+            このストリームがエラーによりクローズされた際にコールされます。
+            </summary>
+            <param name="downstream">ダウンストリーム。</param>
+            <param name="error">エラー情報。</param>
+        </member>
+        <member name="M:iSCP.IDownstreamCallbacks.OnResume(iSCP.Downstream)">
+            <summary>
+            このストリームの再開処理が成功した際にコールされます。
+            </summary>
+            <param name="downstream">ダウンストリーム。</param>
+        </member>
+        <member name="T:iSCP.Downstream">
+            <summary>
+            ダウンストリームを表すクラスです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.DEFAULT_QOS">
+            <summary>
+            QoSのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.DEFAULT_OMIT_EMPTY_CHUNK">
+            <summary>
+            空チャンク省略フラグのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.DEFAULT_ACK_INTERVAL">
+            <summary>
+            受信したメッセージに対するAckの返却間隔のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.DEFAULT_EXPIRY_INTERVAL">
+            <summary>
+            ストリームが異常切断された時点からの有効期間のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.Callbacks">
+            <summary>
+            ダウンストリームで発生するイベントのコールバックです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.Connection">
+            <summary>
+            コネクション
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.StreamIdAlias">
+            <summary>
+            エイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.Id">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.ServerTime">
+            <summary>
+            サーバー時刻（100ナノ秒）。
+            <para>アップストリームを開いた時点におけるサーバーの現在時刻です。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.Filters">
+            <summary>
+            ダウンストリームフィルタのリスト。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.ExpiryInterval">
+            <summary>
+            有効期限（秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.Qos">
+            <summary>
+            QoS。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.OmitEmptyChunk">
+            <summary>
+            空チャンク省略フラグ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.AckInterval">
+            <summary>
+            Ack返却間隔（ミリ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.DataIdAliasMap">
+            <summary>
+            データIDとエイリアスのマップ
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.UpstreamInfoMap">
+            <summary>
+            アップストリームエイリアスとアップストリーム情報のマップ
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.AckIdGenerator">
+            <summary>
+            AckIDのジェネレーター
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.UpstreamInfoMapAckBuffer">
+            <summary>
+            受信したアップストリーム情報のAck用バッファ
+            </summary>
+        </member>
+        <member name="M:iSCP.Downstream.Close(System.Action{System.Exception})">
+            <summary>
+            ダウンストリームを閉じます。
+            </summary>
+        </member>
+        <member name="M:iSCP.Downstream.CloseAsync">
+            <summary>
+            ダウンストリームを閉じます。
+            </summary>
+        </member>
+        <member name="M:iSCP.Downstream.GetState">
+            <summary>
+            ダウンストリームの状態を取得します。
+            </summary>
+        </member>
+        <member name="T:iSCP.Downstream.State">
+            <summary>
+            ダウンストリームの状態を表します。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.State.DataIdAliases">
+            <summary>
+            データIDエイリアスとデータIDのマップ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.State.LastIssuedDataIdAlias">
+            <summary>
+            最後に払い出されたデータIDエイリアス。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.State.UpstreamInfos">
+            <summary>
+            アップストリームエイリアスとアップストリーム情報のマップ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.State.LastIssuedUpstreamInfoAlias">
+            <summary>
+            最後に払い出されたアップストリーム情報のエイリアス。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.State.LastIssuedAckId">
+            <summary>
+            最後に払い出されたAckID。
+            </summary>
+        </member>
+        <member name="T:iSCP.IUpstreamCallbacks">
+            <summary>
+            アップストリームで発生するイベントのコールバックです。
+            </summary>
+        </member>
+        <member name="M:iSCP.IUpstreamCallbacks.OnGenerateChunk(iSCP.Upstream,iSCP.Model.UpstreamChunk)">
+            <summary>
+            送信するアップストリームチャンクが作成される度にコールされます。
+            </summary>
+            <param name="upstream">アップストリーム。</param>
+            <param name="message">送信予定のアップストリームチャンク。</param>
+        </member>
+        <member name="M:iSCP.IUpstreamCallbacks.OnReceiveAck(iSCP.Upstream,iSCP.Model.UpstreamChunkAck)">
+            <summary>
+            送信したアップストリームチャンクがサーバーへ到達しレスポンスを受信できた際にコールされます。
+            </summary>
+            <param name="upstream">アップストリーム。</param>
+            <param name="message">送信したアップストリームチャンクの確認応答。</param>
+        </member>
+        <member name="M:iSCP.IUpstreamCallbacks.OnFailWithError(iSCP.Upstream,System.Exception)">
+            <summary>
+            エラーが発生した際にコールされます。
+            </summary>
+            <param name="upstream">アップストリーム。</param>
+            <param name="error">エラー情報。</param>
+        </member>
+        <member name="M:iSCP.IUpstreamCallbacks.OnCloseWithError(iSCP.Upstream,System.Exception)">
+            <summary>
+            このストリームがエラーによりクローズされた際にコールされます。
+            </summary>
+            <param name="upstream">アップストリーム。</param>
+            <param name="error">エラー情報。</param>
+        </member>
+        <member name="M:iSCP.IUpstreamCallbacks.OnResume(iSCP.Upstream)">
+            <summary>
+            このストリームの再開処理が成功した際にコールされます。
+            </summary>
+            <param name="upstream">アップストリーム。</param>
+        </member>
+        <member name="T:iSCP.Upstream">
+            <summary>
+            アップストリームを表すクラスです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.DEFAULT_QOS">
+            <summary>
+            QoSのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.DEFAULT_PERSIST">
+            <summary>
+            永続化するかどうかのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.DEFAULT_CLOSE_TIMEOUT">
+            <summary>
+            クローズのタイムアウトのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.DEFAULT_ACK_INTERVAL">
+            <summary>
+            Ack返却間隔のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.DEFAULT_EXPIRY_INTERVAL">
+            <summary>
+            有効期限のデフォルト値。
+            </summary>
+        </member>
+        <member name="P:iSCP.Upstream.DEFAULT_FLUSH_POLICY">
+            <summary>
+            データポイントのフラッシュポリシーのデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.Callbacks">
+            <summary>
+            アップストリームで発生するイベントのコールバック。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.Connection">
+            <summary>
+            コネクション
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.StreamIdAlias">
+            <summary>
+            エイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.Id">
+            <summary>
+            ストリームID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.ServerTime">
+            <summary>
+            サーバー時刻（100ナノ秒）。
+            <para>アップストリームを開いた時点におけるサーバーの現在時刻です。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.SessionId">
+            <summary>
+            セッションID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.AckInterval">
+            <summary>
+            Ack返却間隔。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.ExpiryInterval">
+            <summary>
+            有効期限。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.Persist">
+            <summary>
+            永続化するかどうか。
+            </summary>
+        </member>
+        <member name="P:iSCP.Upstream.DataIds">
+            <summary>
+            データIDリスト。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.Qos">
+            <summary>
+            QoS。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.FlushPolicy">
+            <summary>
+            データポイントのフラッシュポリシー。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.CloseTimeout">
+            <summary>
+            クローズのタイムアウト。
+            </summary>
+        </member>
+        <member name="M:iSCP.Upstream.Close(System.Action{System.Exception},System.Boolean)">
+            <summary>
+            アップストリームを閉じます。
+            </summary>
+            <param name="completion">処理完了時のコールバック。</param>
+            <param name="closeSession">セッションを閉じるかどうか。</param>
+        </member>
+        <member name="M:iSCP.Upstream.CloseAsync(System.Boolean)">
+            <summary>
+            アップストリームを閉じます。
+            </summary>
+            <param name="closeSession">セッションを閉じるかどうか。</param>
+        </member>
+        <member name="M:iSCP.Upstream.GetState">
+            <summary>
+            アップストリームの状態を取得します。
+            </summary>
+        </member>
+        <member name="M:iSCP.Upstream.WriteDataPoint(iSCP.Model.DataId,iSCP.Model.DataPoint)">
+            <summary>
+            データポイントを送信バッファへ書き込みます。
+            </summary>
+            <param name="dataId">データID。</param>
+            <param name="dataPoint">送信するデータポイント。</param>
+        </member>
+        <member name="M:iSCP.Upstream.WriteDataPoints(iSCP.Model.DataId,iSCP.Model.DataPoint[])">
+            <summary>
+            複数のデータポイントを送信バッファへ書き込みます。
+            </summary>
+            <param name="dataId">データID。</param>
+            <param name="dataPoints">送信するデータポイントのリスト。</param>
+        </member>
+        <member name="M:iSCP.Upstream.WriteDataPoints(iSCP.Model.DataPointGroup)">
+            <summary>
+            複数のデータポイントを送信バッファへ書き込みます。
+            </summary>
+            <param name="dataPointGroup">データポイントをデータIDごとにまとめた集合。</param>
+        </member>
+        <member name="M:iSCP.Upstream.WriteDataPoints(iSCP.Model.DataPointGroup[])">
+            <summary>
+            複数のデータポイントを送信バッファへ書き込みます。
+            </summary>
+            <param name="dataPointGroups">データポイントをデータIDごとにまとめた集合のリスト。</param>
+        </member>
+        <member name="M:iSCP.Upstream.Flush">
+            <summary>
+            データポイントを手動でフラッシュします。
+            </summary>
+        </member>
+        <member name="T:iSCP.Upstream.State">
+            <summary>
+            アップストリームの状態を表します。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.State.DataIdAliases">
+            <summary>
+            データIDエイリアスとデータIDのマップ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.State.TotalDataPoints">
+            <summary>
+            総送信データポイント数。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.State.LastIssuedSequenceNumber">
+            <summary>
+            最後に払い出されたシーケンス番号。
+            </summary>
+        </member>
+        <member name="F:iSCP.Upstream.State.DataPointGroups">
+            <summary>
+            送信予定のデータポイントグループのリスト。
+            </summary>
+        </member>
+        <member name="T:iSCP.IscpLogLevel">
+            <summary>
+            ログレベルを表す列挙型です。
+            </summary>
+        </member>
+        <member name="T:iSCP.IscpLog">
+            <summary>
+            iSCPクライアント内のログ出力ヘルパーです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.ProtocolVersion">
+            <summary>
+            プロトコルバージョン
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.NodeId">
+            <summary>
+            ノードID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.PingInterval">
+            <summary>
+            Ping間隔
+            <para>単位は秒</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.PingTimeout">
+            <summary>
+            Pingタイムアウト
+            <para>単位は秒</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.ExtensionFields.AccessToken">
+            <summary>
+            アクセストークン
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.ExtensionFields.Intdash">
+            <summary>
+            intdash用拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectRequest.IntdashExtensionFields.ProjectUuid">
+            <summary>
+            プロジェクトID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectResponse.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectResponse.ProtocolVersion">
+            <summary>
+            プロトコルバージョン
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectResponse.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectResponse.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.ConnectResponse.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.Disconnect.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.Disconnect.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.Disconnect.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DataID.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DataID.Type">
+            <summary>
+            型
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunk.StreamIdAlias">
+            <summary>
+            ストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunk.DataIds">
+            <summary>
+            データID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunk.StreamChunk">
+            <summary>
+            ストリームチャンク
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunk.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkAck.StreamIdAlias">
+            <summary>
+            ストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkAck.Results">
+            <summary>
+            処理結果
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkAck.DataIdAliases">
+            <summary>
+            データIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkAck.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunk.StreamIdAlias">
+            <summary>
+            ストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="P:iSCP.Message.DownstreamChunk.UpstreamOrAliasCase">
+            <summary>
+            アップストリーム情報、またはアップストリームエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunk.StreamChunk">
+            <summary>
+            ストリームチャンク
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunk.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAck.StreamIdAlias">
+            <summary>
+            ストリームエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAck.AckId">
+            <summary>
+            ACK ID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAck.Results">
+            <summary>
+            処理結果
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAck.UpstreamAliases">
+            <summary>
+            アップストリームエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAck.DataIdAliases">
+            <summary>
+            データIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAck.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAckComplete.StreamIdAlias">
+            <summary>
+            ストリームエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAckComplete.AckId">
+            <summary>
+            ACK ID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAckComplete.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAckComplete.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkAckComplete.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DataPoint.ElapsedTime">
+            <summary>
+            経過時間
+            <para>単位はTicks(100ナノ秒)</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DataPoint.Payload">
+            <summary>
+            ペイロード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkResult.SequenceNumber">
+            <summary>
+            シーケンス番号
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkResult.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkResult.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamChunkResult.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkResult.StreamIdOfUpstream">
+            <summary>
+            アップストリームのストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkResult.SequenceNumberInUpstream">
+            <summary>
+            アップストリームにおけるシーケンス番号
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkResult.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkResult.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamChunkResult.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamInfo.SessionId">
+            <summary>
+            セッションID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamInfo.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamInfo.SourceNodeId">
+            <summary>
+            生成元ノードID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.StreamChunk.SequenceNumber">
+            <summary>
+            シーケンス番号
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.StreamChunk.DataPointGroups">
+            <summary>
+            データポイントグループのリスト
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DataPointGroup.DataPoints">
+            <summary>
+            データポイント
+            </summary>
+        </member>
+        <member name="P:iSCP.Message.DataPointGroup.DataIdOrAliasCase">
+            <summary>
+            データIDまたはエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamFilter.SourceNodeId">
+            <summary>
+            送信元ノードID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamFilter.DataFilters">
+            <summary>
+            データフィルタ
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DataFilter.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DataFilter.Type">
+            <summary>
+            型
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.DesiredStreamIdAlias">
+            <summary>
+            割り当てを希望するストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.DownstreamFilters">
+            <summary>
+            ダウンストリームフィルタのリスト
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.ExpiryInterval">
+            <summary>
+            有効期限
+            <para>単位は秒</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.DataIdAliases">
+            <summary>
+            データIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.Qos">
+            <summary>
+            QoS
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.OmitEmptyChunk">
+            <summary>
+            空のチャンクの送信を省略するかどうか
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenRequest.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenResponse.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenResponse.AssignedStreamId">
+            <summary>
+            割り当てられたストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenResponse.ServerTime">
+            <summary>
+            サーバー時刻
+            <para>単位はTicks(100ナノ秒)</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenResponse.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenResponse.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpenResponse.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeRequest.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeRequest.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeRequest.DesiredStreamIdAlias">
+            <summary>
+            割り当てを希望するストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeRequest.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeResponse.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeResponse.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeResponse.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResumeResponse.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCloseRequest.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCloseRequest.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCloseRequest.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCloseResponse.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCloseResponse.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCloseResponse.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCloseResponse.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCall.CallId">
+            <summary>
+            コールID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCall.RequestCallId">
+            <summary>
+            リクエストコールID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCall.SourceNodeId">
+            <summary>
+            送信元ノードID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCall.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCall.Type">
+            <summary>
+            型
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCall.Payload">
+            <summary>
+            ペイロード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamCall.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCall.CallId">
+            <summary>
+            コールID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCall.RequestCallId">
+            <summary>
+            リクエストコールID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCall.DestinationNodeId">
+            <summary>
+            宛先ノードID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCall.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCall.Type">
+            <summary>
+            型
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCall.Payload">
+            <summary>
+            ペイロード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCall.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCallAck.CallId">
+            <summary>
+            コールID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCallAck.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCallAck.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCallAck.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamMetadata.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="P:iSCP.Message.UpstreamMetadata.MetadataCase">
+            <summary>
+            メタデータ
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamMetadata.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamMetadata.ExtensionFields.Persist">
+            <summary>
+            永続化フラグ
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamMetadataAck.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamMetadataAck.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamMetadataAck.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamMetadataAck.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadata.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadata.StreamIdAlias">
+            <summary>
+            ストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadata.SourceNodeId">
+            <summary>
+            生成元ノードID
+            </summary>
+        </member>
+        <member name="P:iSCP.Message.DownstreamMetadata.MetadataCase">
+            <summary>
+            メタデータ
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadata.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadataAck.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadataAck.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadataAck.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamMetadataAck.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.BaseTime.SessionId">
+            <summary>
+            セッションID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.BaseTime.Name">
+            <summary>
+            基準時刻の名称
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.BaseTime.Priority">
+            <summary>
+            優先度
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.BaseTime.ElapsedTime">
+            <summary>
+            経過時間
+            <para>単位はTicks(100ナノ秒)</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.BaseTime.BaseTime_">
+            <summary>
+            基準時刻
+            <para>単位はTicks(100ナノ秒)</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamAbnormalClose.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamNormalClose.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpen.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpen.DownstreamFilters">
+            <summary>
+            ダウンストリームフィルタのリスト
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamOpen.Qos">
+            <summary>
+            QoS
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResume.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResume.DownstreamFilters">
+            <summary>
+            ダウンストリームフィルタのリスト
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.DownstreamResume.Qos">
+            <summary>
+            QoS
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamAbnormalClose.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamAbnormalClose.SessionId">
+            <summary>
+            セッションID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamNormalClose.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamNormalClose.SessionId">
+            <summary>
+            セッションID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamNormalClose.TotalDataPoints">
+            <summary>
+            総データポイント数
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamNormalClose.FinalSequenceNumber">
+            <summary>
+            最終シーケンス番号
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpen.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpen.SessionId">
+            <summary>
+            セッションID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpen.Qos">
+            <summary>
+            QoS
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResume.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResume.SessionId">
+            <summary>
+            セッションID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.Ping.RequestId">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.Ping.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.Pong.RequestId">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.Pong.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.QoS.Unreliable">
+            <summary>
+            低信頼
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.QoS.Reliable">
+            <summary>
+            高信頼
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.QoS.Partial">
+            <summary>
+            部分的信頼
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.SessionId">
+            <summary>
+            セッションID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.AckInterval">
+            <summary>
+            ACKの返却間隔
+            <para>単位はミリ秒</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.ExpiryInterval">
+            <summary>
+            有効期限
+            <para>単位は秒</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.DataIds">
+            <summary>
+            データIDリスト
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.Qos">
+            <summary>
+            QoS
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenRequest.ExtensionFields.Persist">
+            <summary>
+            永続化フラグ
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.AssignedStreamId">
+            <summary>
+            割り当てられたストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.AssignedStreamIdAlias">
+            <summary>
+            割り当てられたストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.DataIdAliases">
+            <summary>
+            データIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.ServerTime">
+            <summary>
+            サーバー時刻
+            <para>単位はTicks(100ナノ秒)</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamOpenResponse.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeRequest.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeRequest.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeRequest.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeResponse.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeResponse.AssignedStreamIdAlias">
+            <summary>
+            割り当てられたストリームIDエイリアス
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeResponse.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeResponse.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamResumeResponse.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseRequest.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseRequest.StreamId">
+            <summary>
+            ストリームID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseRequest.TotalDataPoints">
+            <summary>
+            総データポイント数
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseRequest.FinalSequenceNumber">
+            <summary>
+            最終シーケンス番号
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseRequest.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseRequest.ExtensionFields.CloseSession">
+            <summary>
+            セッションの終了要否
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseResponse.RequestId">
+            <summary>
+            リクエストID
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseResponse.ResultCode">
+            <summary>
+            結果コード
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseResponse.ResultString">
+            <summary>
+            結果文字列
+            </summary>
+        </member>
+        <member name="F:iSCP.Message.UpstreamCloseResponse.ExtensionFields_">
+            <summary>
+            拡張フィールド
+            </summary>
+        </member>
+        <member name="F:iSCP.Transport.Receiver.DEFAULT_TIMEOUT">
+            <summary>
+            デフォルトのタイムアウト時間
+            <para>単位はミリ秒。</para>
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.Receiver.#ctor(System.Int64)">
+            <param name="timeout">タイムアウト時間。単位はミリ秒。</param>
+        </member>
+        <member name="T:iSCP.Transport.ITransportConfig">
+            <summary>
+            トランスポートの設定のインターフェイスです。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.ITransportConfig.Type">
+            <summary>
+            トランスポートのタイプ。
+            </summary>
+        </member>
+        <member name="T:iSCP.Transport.TransportType">
+            <summary>
+            トランスポートのタイプです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Transport.TransportType.WebSocket">
+            <summary>
+            WebSocket。
+            </summary>
+        </member>
+        <member name="T:iSCP.Transport.WebSocket">
+            <summary>
+            WebSocketです。
+            </summary>
+        </member>
+        <member name="T:iSCP.Transport.WebSocket.Config">
+            <summary>
+            WebSocketの設定です。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.WebSocket.Config.Type">
+            <summary>
+            トランスポートタイプ。
+            </summary>
+        </member>
+        <member name="F:iSCP.Transport.WebSocket.Config.Path">
+            <summary>
+            パス。
+            <para>デフォルトは `/api/iscp/connect` です。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Transport.WebSocket.Config.Port">
+            <summary>
+            ポート。
+            <para>`null` が設定されている場合デフォルトのポートが利用されます。</para>
+            </summary>
+        </member>
+        <member name="F:iSCP.Transport.WebSocket.Config.EnableTls">
+            <summary>
+            TLSが有効かどうか。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.WebSocket.Config.#ctor(System.String,System.Nullable{System.Int32},System.Boolean)">
+            <param name="path">パス。<para>デフォルトは `/api/iscp/connect` です。</para></param>
+            <param name="port">ポート。<para>`null` が設定されている場合デフォルトのポートが利用されます。</para></param>
+            <param name="enableTls">TLSが有効かどうか。</param>
+        </member>
+    </members>
+</doc>
