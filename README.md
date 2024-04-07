@@ -26,7 +26,7 @@ https://github.com/aptpod/iscp-csharp.git?path=/package
 
 ### Connect to intdash API
 
-このサンプルではiscp-csharpを使ってintdash APIに接続します。
+このサンプルではiscp-csを使ってintdash APIに接続します。
 
 ```csharp
 using System;
@@ -116,103 +116,6 @@ public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
     public void OnFailWithError(Connection connection, Exception error)
     {
         // Connection内部で何らかのエラーが発生した際にコールされます。
-    }
-
-    #endregion
-}
-```
-
-### Start Downstream
-
-アップストリームで送信されたデータをダウンストリームで受信するサンプルです。
-
-このサンプルでは、アップストリーム開始のメタデータ、基準時刻のメタデータ、文字列型のデータポイントを受信しています。
-
-```csharp
-public partial class ExampleForUnity : IDownstreamCallbacks
-{
-    /// <summary>
-    /// 受信したいデータを送信している送信元ノードのUUID
-    /// （アップストリームを行っている送信元でConnection.Configで設定したnodeIdを指定してください。）
-    /// </summary>
-    string targetDownstreamNodeId = "00000000-0000-0000-0000-000000000000";
-    /// <summary>
-    /// オープンしたダウンストリーム一覧
-    /// </summary>
-    List<Downstream> downstreams = new List<Downstream>();
-
-    void StartDownstream()
-    {
-        // ダウンストリームをオープンします。
-        connection?.OpenDownstream(
-            downstreamFilters: new DownstreamFilter[]
-            {
-                new DownstreamFilter(
-                    sourceNodeId: targetDownstreamNodeId, // 送信元ノードのIDを指定します。
-                    dataFilters: new DataFilter[]
-                    {
-                        new DataFilter(
-                            name: "#", type: "#") // 受信したいデータを名称と型で指定します。この例では、ワイルドカード `#` を使用して全てのデータを取得します。
-                    })
-            },
-            completion: (downstream, exception) =>
-            {
-                if (downstream == null)
-                {
-                    // オープン失敗。
-                    return;
-                }
-                // オープン成功。
-                downstreams.Add(downstream);
-                // 受信データを取り扱うためにデリゲートを設定します。
-                downstream.Callbacks = this; // IDownstreamCallbacks
-            });
-    }
-
-    #region IDownstreamCallbacks
-
-
-    public void OnReceiveChunk(Downstream downstream, DownstreamChunk message)
-    {
-        // データポイントを読み込むことができた際にコールされます。
-        Debug.Log($"Received dataPoints sequenceNumber[{message.SequenceNumber}], sessionId[{message.UpstreamInfo.SessionId}]");
-        foreach (var g in message.DataPointGroups)
-        {
-            foreach (var dp in g.DataPoints)
-            {
-                Debug.Log($"Received a dataPoint dataName[{g.DataId.Name}], dataType[{g.DataId.Type}], payload[{System.Text.Encoding.UTF8.GetString(dp.Payload)}]");
-            }
-        }
-    }
-
-    public void OnReceiveMetadata(Downstream downstream, DownstreamMetadata message)
-    {
-        // メタデータを受信した際にコールされます。
-        Debug.Log($"Received a metadata sourceNodeId[{message.SourceNodeId}], metadataType:{message.Type}");
-        switch (message.Type)
-        {
-            case DownstreamMetadata.MetadataType.BaseTime:
-                var baseTime = message.BaseTime.Value;
-                Debug.Log($"Received baseTime[{baseTime.BaseTime_.ToDateTimeFromUnixTimeTicks()}], priority[{baseTime.Priority}], name[{baseTime.Priority}]");
-                break;
-            default: break;
-        }
-    }
-
-    public void OnFailWithError(Downstream downstream, Exception error)
-    {
-        // 内部でエラーが発生した場合にコールされます。
-    }
-
-    public void OnCloseWithError(Downstream downstream, Exception error)
-    {
-        // 何らかの理由でストリームがクローズした場合にコールされます。
-        // 再度ダウンストリームをオープンしたい場合は、 `Connection.ReopenDownstream()` を使用することにより、ストリームの設定を引き継いで別のストリームを開くことが可能です。
-    }
-
-    public void OnResume(Downstream downstream)
-    {
-        // 自動再接続機能が働き、再接続が行われた場合にコールされます。
     }
 
     #endregion
@@ -323,6 +226,103 @@ public partial class ExampleForUnity : IUpstreamCallbacks
 }
 ```
 
+### Start Downstream
+
+アップストリームで送信されたデータをダウンストリームで受信するサンプルです。
+
+このサンプルでは、アップストリーム開始のメタデータ、基準時刻のメタデータ、文字列型のデータポイントを受信しています。
+
+```csharp
+public partial class ExampleForUnity : IDownstreamCallbacks
+{
+    /// <summary>
+    /// 受信したいデータを送信している送信元ノードのUUID
+    /// （アップストリームを行っている送信元でConnection.Configで設定したnodeIdを指定してください。）
+    /// </summary>
+    string targetDownstreamNodeId = "00000000-0000-0000-0000-000000000000";
+    /// <summary>
+    /// オープンしたダウンストリーム一覧
+    /// </summary>
+    List<Downstream> downstreams = new List<Downstream>();
+
+    void StartDownstream()
+    {
+        // ダウンストリームをオープンします。
+        connection?.OpenDownstream(
+            downstreamFilters: new DownstreamFilter[]
+            {
+                new DownstreamFilter(
+                    sourceNodeId: targetDownstreamNodeId, // 送信元ノードのIDを指定します。
+                    dataFilters: new DataFilter[]
+                    {
+                        new DataFilter(
+                            name: "#", type: "#") // 受信したいデータを名称と型で指定します。この例では、ワイルドカード `#` を使用して全てのデータを取得します。
+                    })
+            },
+            completion: (downstream, exception) =>
+            {
+                if (downstream == null)
+                {
+                    // オープン失敗。
+                    return;
+                }
+                // オープン成功。
+                downstreams.Add(downstream);
+                // 受信データを取り扱うためにデリゲートを設定します。
+                downstream.Callbacks = this; // IDownstreamCallbacks
+            });
+    }
+
+    #region IDownstreamCallbacks
+
+
+    public void OnReceiveChunk(Downstream downstream, DownstreamChunk message)
+    {
+        // データポイントを読み込むことができた際にコールされます。
+        Debug.Log($"Received dataPoints sequenceNumber[{message.SequenceNumber}], sessionId[{message.UpstreamInfo.SessionId}]");
+        foreach (var g in message.DataPointGroups)
+        {
+            foreach (var dp in g.DataPoints)
+            {
+                Debug.Log($"Received a dataPoint dataName[{g.DataId.Name}], dataType[{g.DataId.Type}], payload[{System.Text.Encoding.UTF8.GetString(dp.Payload)}]");
+            }
+        }
+    }
+
+    public void OnReceiveMetadata(Downstream downstream, DownstreamMetadata message)
+    {
+        // メタデータを受信した際にコールされます。
+        Debug.Log($"Received a metadata sourceNodeId[{message.SourceNodeId}], metadataType:{message.Type}");
+        switch (message.Type)
+        {
+            case DownstreamMetadata.MetadataType.BaseTime:
+                var baseTime = message.BaseTime.Value;
+                Debug.Log($"Received baseTime[{baseTime.BaseTime_.ToDateTimeFromUnixTimeTicks()}], priority[{baseTime.Priority}], name[{baseTime.Name}]");
+                break;
+            default: break;
+        }
+    }
+
+    public void OnFailWithError(Downstream downstream, Exception error)
+    {
+        // 内部でエラーが発生した場合にコールされます。
+    }
+
+    public void OnCloseWithError(Downstream downstream, Exception error)
+    {
+        // 何らかの理由でストリームがクローズした場合にコールされます。
+        // 再度ダウンストリームをオープンしたい場合は、 `Connection.ReopenDownstream()` を使用することにより、ストリームの設定を引き継いで別のストリームを開くことが可能です。
+    }
+
+    public void OnResume(Downstream downstream)
+    {
+        // 自動再接続機能が働き、再接続が行われた場合にコールされます。
+    }
+
+    #endregion
+}
+```
+
 ### E2E Call
 
 E2E（エンドツーエンド）コールのサンプルです。
@@ -360,12 +360,12 @@ public partial class E2ECallExampleForUnity : MonoBehaviour
     /// コントローラーノード用のアクセストークン
     /// <para>intdash APIで取得したアクセストークンを指定して下さい。</para>
     /// </summary>
-    string accessTokenforController = "";
+    string accessTokenForController = "";
     /// <summary>
     /// 対象ノード用のアクセストークン
     /// <para>intdash APIで取得したアクセストークンを指定して下さい。</para>
     /// </summary>
-    string accessTokenforTarget = "";
+    string accessTokenForTarget = "";
 
     /// <summary>
     /// コントローラーノード用のコネクション
@@ -405,7 +405,7 @@ public partial class E2ECallExampleForUnity
             {
                 // アクセストークンを指定します。接続時に発生するイベントにより使用されます。
                 // ここでは固定のトークンを返していますが、随時トークンの更新を行う実装にするとトークンの期限切れを考える必要がなくなります。
-                token(accessTokenforController);
+                token(accessTokenForController);
             },
             nodeId: controllerNodeId,
             completion: (con, exception) =>
@@ -433,11 +433,9 @@ public partial class E2ECallExampleForUnity
                     if (exception != null)
                     {
                         // コールの送信もしくはリプライの受信に失敗。
+                        return;
                     }
-                    else
-                    {
-                        // コールの送信及びリプライの受信に成功。
-                    }
+                    // コールの送信及びリプライの受信に成功。
                 });
     }
 
@@ -471,7 +469,7 @@ public partial class E2ECallExampleForUnity : IConnectionE2ECallCallbacks
             {
                 // アクセス用のトークンを指定します。接続時に発生するイベントにより使用されます。
                 // ここでは固定のトークンを返していますが、随時トークンの更新を行う実装にするとトークンの期限切れを考える必要がなくなります。
-                token(accessTokenforTarget);
+                token(accessTokenForTarget);
             },
             nodeId: targetNodeId,
             completion: (con, exception) =>

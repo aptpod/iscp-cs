@@ -818,19 +818,19 @@
         <member name="F:Iscp2.UpstreamChunkResult.ExtensionFieldsFieldNumber">
             <summary>Field number for the "extension_fields" field.</summary>
         </member>
-        <member name="M:IMessageConverter.EncodeTo(iSCP.Message.IMessage)">
+        <member name="T:iSCP.EncodingName">
             <summary>
-            EncodeToは、iSCPのメッセージをバイナリへエンコードし、与えられたWriterへ書き込みます。
+            エンコーディングの名前です。
             </summary>
         </member>
-        <member name="M:IMessageConverter.DecodeFrom(System.Byte[])">
+        <member name="F:iSCP.EncodingName.Json">
             <summary>
-            DecodeFromは、与えられたWriterから読み出したバイナリを、iSCPのメッセージへデコードしあｍす。
+            JSON。
             </summary>
         </member>
-        <member name="P:IMessageConverter.Name">
+        <member name="F:iSCP.EncodingName.Protobuf">
             <summary>
-            Nameは、このエンコーディング名です。
+            ProtocolBuffer。
             </summary>
         </member>
         <member name="M:iSCP.ByteArrayExtensions.ToInt8(System.Byte[],System.Boolean)">
@@ -958,7 +958,7 @@
             オーバーフローが発生するかチェックします。
             </summary>
         </member>
-        <member name="M:iSCP.NumberExtensions.AddingResportingOverflow(System.UInt64,System.UInt64)">
+        <member name="M:iSCP.NumberExtensions.AddingReportingOverflow(System.UInt64,System.UInt64)">
             <summary>
             オーバーフローが発生するかチェックします。
             </summary>
@@ -1170,11 +1170,12 @@
             <param name="handoverDataPoints">未送信のデータポイントが存在すれば引き継ぐかどうか。</param>
             <param name="completion">処理完了時のコールバック。</param>
         </member>
-        <member name="M:iSCP.Connection.ReopenUpstreamAsync(iSCP.Upstream)">
+        <member name="M:iSCP.Connection.ReopenUpstreamAsync(iSCP.Upstream,System.Boolean)">
             <summary>
             ストリーム設定を引き継いで別ストリームとして再度アップストリームを開きます。
             </summary>
             <param name="upstream">既存のアップストリーム。このアップストリームの設定を引き継ぐ別のアップストリームが開かれます。</param>
+            <param name="handoverDataPoints">未送信のデータポイントが存在すれば引き継ぐかどうか。</param>
         </member>
         <member name="F:iSCP.Connection.DEFAULT_PING_TIMEOUT">
             <summary>
@@ -1301,7 +1302,7 @@
             実際にコネクションが接続中かどうか。
             </summary>
         </member>
-        <member name="M:iSCP.Connection.#ctor(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,EncodingName)">
+        <member name="M:iSCP.Connection.#ctor(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName)">
             <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
             <param name="transportConfig">トランスポートの設定。</param>
             <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
@@ -1314,7 +1315,7 @@
             <param name="reconnectMaxInterval">自動で再接続する際の、リトライ間隔の最大値（ミリ秒）。</param>
             <param name="encoding">エンコーディング名。</param>
         </member>
-        <member name="M:iSCP.Connection.Connect(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks,System.Action{iSCP.Connection,System.Exception})">
+        <member name="M:iSCP.Connection.Connect(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks,System.Action{iSCP.Connection,System.Exception})">
             <summary>
             接続を行います。
             </summary>
@@ -1333,7 +1334,7 @@
             <param name="e2ECallCallbacks">コネクションで発生するE2Eコールイベントをハンドリングするインターフェース。</param>
             <param name="completion">処理完了時のコールバック。</param>
         </member>
-        <member name="M:iSCP.Connection.ConnectAsync(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks)">
+        <member name="M:iSCP.Connection.ConnectAsync(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks)">
             <summary>
             接続を行います。
             </summary>
@@ -2289,12 +2290,12 @@
         </member>
         <member name="F:iSCP.Downstream.Connection">
             <summary>
-            コネクション
+            コネクション。
             </summary>
         </member>
         <member name="F:iSCP.Downstream.StreamIdAlias">
             <summary>
-            エイリアス
+            エイリアス。
             </summary>
         </member>
         <member name="F:iSCP.Downstream.Id">
@@ -2305,7 +2306,7 @@
         <member name="F:iSCP.Downstream.ServerTime">
             <summary>
             サーバー時刻（100ナノ秒）。
-            <para>アップストリームを開いた時点におけるサーバーの現在時刻です。</para>
+            <para>ダウンストリームを開いた時点におけるサーバーの現在時刻です。</para>
             </summary>
         </member>
         <member name="F:iSCP.Downstream.Filters">
@@ -2357,6 +2358,7 @@
             <summary>
             ダウンストリームを閉じます。
             </summary>
+            <param name="completion">処理完了時のコールバック。</param>
         </member>
         <member name="M:iSCP.Downstream.CloseAsync">
             <summary>
@@ -2479,12 +2481,12 @@
         </member>
         <member name="F:iSCP.Upstream.Connection">
             <summary>
-            コネクション
+            コネクション。
             </summary>
         </member>
         <member name="F:iSCP.Upstream.StreamIdAlias">
             <summary>
-            エイリアス
+            エイリアス。
             </summary>
         </member>
         <member name="F:iSCP.Upstream.Id">
@@ -2709,12 +2711,12 @@
             拡張フィールド
             </summary>
         </member>
-        <member name="F:iSCP.Message.DataID.Name">
+        <member name="F:iSCP.Message.DataId.Name">
             <summary>
             名称
             </summary>
         </member>
-        <member name="F:iSCP.Message.DataID.Type">
+        <member name="F:iSCP.Message.DataId.Type">
             <summary>
             型
             </summary>
@@ -3631,6 +3633,11 @@
             WebSocketです。
             </summary>
         </member>
+        <member name="F:iSCP.Transport.WebSocket.DEFAULT_PATH">
+            <summary>
+            デフォルトのパス。
+            </summary>
+        </member>
         <member name="T:iSCP.Transport.WebSocket.Config">
             <summary>
             WebSocketの設定です。
@@ -3662,6 +3669,21 @@
             <param name="path">パス。<para>デフォルトは `/api/iscp/connect` です。</para></param>
             <param name="port">ポート。<para>`null` が設定されている場合デフォルトのポートが利用されます。</para></param>
             <param name="enableTls">TLSが有効かどうか。</param>
+        </member>
+        <member name="M:IMessageConverter.EncodeTo(iSCP.Message.IMessage)">
+            <summary>
+            EncodeToは、iSCPのメッセージをバイナリへエンコードし、与えられたWriterへ書き込みます。
+            </summary>
+        </member>
+        <member name="M:IMessageConverter.DecodeFrom(System.Byte[])">
+            <summary>
+            DecodeFromは、与えられたWriterから読み出したバイナリを、iSCPのメッセージへデコードします。
+            </summary>
+        </member>
+        <member name="P:IMessageConverter.Name">
+            <summary>
+            Nameは、このエンコーディング名です。
+            </summary>
         </member>
     </members>
 </doc>
