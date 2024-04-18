@@ -169,7 +169,7 @@ public partial class ExampleForUnity : IUpstreamCallbacks
                     baseTime: new BaseTime(
                         sessionId: sessionId,
                         name: "manual",
-                        priority: 1000,
+                        priority: 60,
                         elapsedTime: 0,
                         baseTime: baseTime.ToUnixTimeTicks()), // 送信する基準時刻はUNIX時刻である必要があります。
                     persist: upstreamPersist,

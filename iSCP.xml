@@ -1883,7 +1883,7 @@
             基準時刻（100ナノ秒）。
             </summary>
         </member>
-        <member name="M:iSCP.Model.BaseTime.#ctor(System.String,System.String,System.UInt32,System.Int64,System.Int64)">
+        <member name="M:iSCP.Model.BaseTime.#ctor(System.String,System.String,System.Byte,System.Int64,System.Int64)">
             <param name="sessionId">セッションID。</param>
             <param name="name">基準時刻の名称。</param>
             <param name="priority">優先度。</param>
