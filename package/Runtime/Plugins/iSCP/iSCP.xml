@@ -1038,7 +1038,7 @@
             iSCPのコネクションを表すクラスです。
             </summary>
         </member>
-        <member name="M:iSCP.Connection.OpenDownstream(iSCP.Model.DownstreamFilter[],iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.UInt16,System.Int64,System.Action{iSCP.Downstream,System.Exception})">
+        <member name="M:iSCP.Connection.OpenDownstream(iSCP.Model.DownstreamFilter[],iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.UInt16,System.Int64,System.Int64,System.Int64,System.Action{iSCP.Downstream,System.Exception})">
             <summary>
             ダウンストリームを開きます。
             </summary>
@@ -1048,9 +1048,11 @@
             <param name="omitEmptyChunk">空チャンク省略フラグ。trueの場合、DownstreamChunk内のDataPointGroupsが空の時、DownstreamChunkの送信を省略します。</param>
             <param name="expiryInterval">有効期限（秒）。このストリームが異常切断された時点からの有効期限を表します。最小値の `0` は、異常切断されたと同時に有効期限切れとなることを表します。</param>
             <param name="ackInterval">Ack返却間隔（ミリ秒）。受信したメッセージに対するAckの返却間隔です。</param>
+            <param name="openTimeout">オープンのタイムアウト（ミリ秒）。</param>
+            <param name="closeTimeout">クローズのタイムアウト（ミリ秒）。</param>
             <param name="completion">処理完了時のコールバック。</param>
         </member>
-        <member name="M:iSCP.Connection.OpenDownstreamAsync(iSCP.Model.DownstreamFilter[],iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.UInt16,System.Int64)">
+        <member name="M:iSCP.Connection.OpenDownstreamAsync(iSCP.Model.DownstreamFilter[],iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.UInt16,System.Int64,System.Int64,System.Int64)">
             <summary>
             ダウンストリームを開きます。
             </summary>
@@ -1060,6 +1062,8 @@
             <param name="omitEmptyChunk">空チャンク省略フラグ。trueの場合、DownstreamChunk内のDataPointGroupsが空の時、DownstreamChunkの送信を省略します。</param>
             <param name="expiryInterval">有効期限（秒）。このストリームが異常切断された時点からの有効期限を表します。最小値の `0` は、異常切断されたと同時に有効期限切れとなることを表します。</param>
             <param name="ackInterval">Ack返却間隔（ミリ秒）。受信したメッセージに対するAckの返却間隔です。</param>
+            <param name="openTimeout">オープンのタイムアウト（ミリ秒）。</param>
+            <param name="closeTimeout">クローズのタイムアウト（ミリ秒）。</param>
         </member>
         <member name="M:iSCP.Connection.ReopenDownstream(iSCP.Downstream,System.Action{iSCP.Downstream,System.Exception})">
             <summary>
@@ -1074,68 +1078,77 @@
             </summary>
             <param name="downstream">既存のダウンストリーム。このダウンストリームの設定を引き継ぐ別のダウンストリームが開かれます。</param>
         </member>
-        <member name="M:iSCP.Connection.SendCall(iSCP.Model.UpstreamCall,System.Action{System.Exception})">
+        <member name="M:iSCP.Connection.SendCall(iSCP.Model.UpstreamCall,System.Int64,System.Action{System.Exception})">
             <summary>
             E2Eコールを送信します。
             </summary>
             <param name="upstreamCall">E2Eコール。</param>
             <param name="completion">処理完了時のコールバック。</param>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
             <returns>コールID。</returns>
         </member>
-        <member name="M:iSCP.Connection.SendCallAsync(iSCP.Model.UpstreamCall)">
+        <member name="M:iSCP.Connection.SendCallAsync(iSCP.Model.UpstreamCall,System.Int64)">
             <summary>
             E2Eコールを送信します。
             </summary>
             <param name="upstreamCall">E2Eコール。</param>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
             <returns>(コールID, エラー)。</returns>
         </member>
-        <member name="M:iSCP.Connection.SendReplyCall(iSCP.Model.UpstreamReplyCall,System.Action{System.Exception})">
+        <member name="M:iSCP.Connection.SendReplyCall(iSCP.Model.UpstreamReplyCall,System.Int64,System.Action{System.Exception})">
             <summary>
             E2Eコールのリプライを送信します。
             </summary>
             <param name="upstreamReplyCall">E2Eリプライコール。</param>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
             <param name="completion">処理完了時のコールバック。</param>
             <returns>コールID。</returns>
         </member>
-        <member name="M:iSCP.Connection.SendReplyCallAsync(iSCP.Model.UpstreamReplyCall)">
+        <member name="M:iSCP.Connection.SendReplyCallAsync(iSCP.Model.UpstreamReplyCall,System.Int64)">
             <summary>
             E2Eコールのリプライを送信します。
             </summary>
             <param name="upstreamReplyCall">E2Eリプライコール。</param>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
             <returns>(コールID, エラー)。</returns>
         </member>
-        <member name="M:iSCP.Connection.SendCallAndWaitReplyCall(iSCP.Model.UpstreamCall,System.Action{System.Nullable{iSCP.Model.DownstreamReplyCall},System.Exception})">
+        <member name="M:iSCP.Connection.SendCallAndWaitReplyCall(iSCP.Model.UpstreamCall,System.Int64,System.Int64,System.Action{System.Nullable{iSCP.Model.DownstreamReplyCall},System.Exception})">
             <summary>
             E2Eコールを送信し、リプライコールを受信します。
             </summary>
             <param name="upstreamCall">E2Eコール。</param>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
+            <param name="waitTimeout">受信のタイムアウト（ミリ秒）。</param>
             <param name="completion">処理完了時のコールバック。</param>
             <returns>コールID。</returns>
         </member>
-        <member name="M:iSCP.Connection.SendCallAndWaitReplyCallAsync(iSCP.Model.UpstreamCall)">
+        <member name="M:iSCP.Connection.SendCallAndWaitReplyCallAsync(iSCP.Model.UpstreamCall,System.Int64,System.Int64)">
             <summary>
             E2Eコールを送信し、リプライコールを受信します。
             </summary>
             <param name="upstreamCall">E2Eコール。</param>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
+            <param name="waitTimeout">受信のタイムアウト（ミリ秒）。</param>
             <returns>(コールID, E2Eリプライコール, エラー)。</returns>
         </member>
-        <member name="M:iSCP.Connection.SendBaseTime(iSCP.Model.BaseTime,System.Boolean,System.Action{System.Exception})">
+        <member name="M:iSCP.Connection.SendBaseTime(iSCP.Model.BaseTime,System.Boolean,System.Int64,System.Action{System.Exception})">
             <summary>
             基準時刻を送信します。
             </summary>
             <param name="baseTime">基準時刻。</param>
             <param name="persist">永続化するかどうか。</param>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
             <param name="completion">処理完了時のコールバック。</param>
         </member>
-        <member name="M:iSCP.Connection.SendBaseTimeAsync(iSCP.Model.BaseTime,System.Boolean)">
+        <member name="M:iSCP.Connection.SendBaseTimeAsync(iSCP.Model.BaseTime,System.Boolean,System.Int64)">
             <summary>
             基準時刻を送信します。
             </summary>
             <param name="baseTime">基準時刻。</param>
             <param name="persist">永続化するかどうか。</param>
-            <returns></returns>
+            <param name="sendTimeout">送信のタイムアウト（ミリ秒）。</param>
         </member>
-        <member name="M:iSCP.Connection.OpenUpstream(System.String,System.UInt16,System.UInt16,iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.Nullable{iSCP.Model.FlushPolicy},System.Int64,System.Action{iSCP.Upstream,System.Exception})">
+        <member name="M:iSCP.Connection.OpenUpstream(System.String,System.UInt16,System.UInt16,iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.Nullable{iSCP.Model.FlushPolicy},System.Int64,System.Int64,System.Action{iSCP.Upstream,System.Exception})">
             <summary>
             アップストリームを開きます。
             </summary>
@@ -1146,10 +1159,11 @@
             <param name="qos">QoS。現在は `unreliable` のみサポート。</param>
             <param name="persist">永続化するかどうか。</param>
             <param name="flushPolicy">データポイントのフラッシュポリシー。</param>
+            <param name="openTimeout">オープンのタイムアウト（ミリ秒）。</param>
             <param name="closeTimeout">クローズのタイムアウト（ミリ秒）。</param>
             <param name="completion">処理完了時のコールバック。</param>
         </member>
-        <member name="M:iSCP.Connection.OpenUpstreamAsync(System.String,System.UInt16,System.UInt16,iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.Nullable{iSCP.Model.FlushPolicy},System.Int64)">
+        <member name="M:iSCP.Connection.OpenUpstreamAsync(System.String,System.UInt16,System.UInt16,iSCP.Model.DataId[],iSCP.Model.QoS,System.Boolean,System.Nullable{iSCP.Model.FlushPolicy},System.Int64,System.Int64)">
             <summary>
             アップストリームを開きます。
             </summary>
@@ -1160,6 +1174,7 @@
             <param name="qos">QoS。現在は `unreliable` のみサポート。</param>
             <param name="persist">永続化するかどうか。</param>
             <param name="flushPolicy">データポイントのフラッシュポリシー。</param>
+            <param name="openTimeout">オープンのタイムアウト（ミリ秒）。</param>
             <param name="closeTimeout">クローズのタイムアウト（ミリ秒）。</param>
         </member>
         <member name="M:iSCP.Connection.ReopenUpstream(iSCP.Upstream,System.Boolean,System.Action{iSCP.Upstream,System.Exception})">
@@ -1177,14 +1192,24 @@
             <param name="upstream">既存のアップストリーム。このアップストリームの設定を引き継ぐ別のアップストリームが開かれます。</param>
             <param name="handoverDataPoints">未送信のデータポイントが存在すれば引き継ぐかどうか。</param>
         </member>
+        <member name="F:iSCP.Connection.DEFAULT_CONNECT_TIMEOUT">
+            <summary>
+            コネクトのタイムアウトのデフォルト値（ミリ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_CLOSE_TIMEOUT">
+            <summary>
+            クローズのタイムアウトのデフォルト値（ミリ秒）。
+            </summary>
+        </member>
         <member name="F:iSCP.Connection.DEFAULT_PING_TIMEOUT">
             <summary>
-            Pingタイムアウトのデフォルト値。
+            Pingタイムアウトのデフォルト値（秒）。
             </summary>
         </member>
         <member name="F:iSCP.Connection.DEFAULT_PING_INTERVAL">
             <summary>
-            Pingを送信する間隔のデフォルト値。
+            Pingを送信する間隔のデフォルト値（秒）。
             </summary>
         </member>
         <member name="F:iSCP.Connection.DEFAULT_AUTO_RECONNECT">
@@ -1194,17 +1219,27 @@
         </member>
         <member name="F:iSCP.Connection.DEFAULT_RECONNECT_BASE_INTERVAL">
             <summary>
-            自動で再接続する際の、リトライ間隔の初期値のデフォルト値。
+            自動で再接続する際の、リトライ間隔の初期値のデフォルト値（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Connection.DEFAULT_RECONNECT_MAX_INTERVAL">
             <summary>
-            自動で再接続する際の、リトライ間隔の最大値のデフォルト値。
+            自動で再接続する際の、リトライ間隔の最大値のデフォルト値（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Connection.DEFAULT_ENCODING">
             <summary>
             エンコーディング名のデフォルト値。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_SEND_METADATA_TIMEOUT">
+            <summary>
+            メタデータ送信のタイムアウトのデフォルト値（ミリ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.DEFAULT_E2E_CALL_TIMEOUT">
+            <summary>
+            E2Eコールのタイムアウトのデフォルト値（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Connection.Tag">
@@ -1245,6 +1280,11 @@
         <member name="F:iSCP.Connection.ProjectUuid">
             <summary>
             プロジェクトID。
+            </summary>
+        </member>
+        <member name="F:iSCP.Connection.ConnectTimeout">
+            <summary>
+            コネクトのタイムアウト（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Connection.PingInterval">
@@ -1302,12 +1342,13 @@
             実際にコネクションが接続中かどうか。
             </summary>
         </member>
-        <member name="M:iSCP.Connection.#ctor(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName)">
+        <member name="M:iSCP.Connection.#ctor(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName)">
             <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
             <param name="transportConfig">トランスポートの設定。</param>
             <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
             <param name="nodeId">ノードID。</param>
             <param name="projectUuid">プロジェクトID。</param>
+            <param name="connectTimeout">コネクトのタイムアウト（ミリ秒）。</param>
             <param name="pingTimeout">Pingタイムアウト（秒）。タイムアウトが発生した場合トランスポートを切断します。</param>
             <param name="pingInterval">Ping間隔（秒）。</param>
             <param name="autoReconnect">自動で再接続するかどうか。</param>
@@ -1315,7 +1356,7 @@
             <param name="reconnectMaxInterval">自動で再接続する際の、リトライ間隔の最大値（ミリ秒）。</param>
             <param name="encoding">エンコーディング名。</param>
         </member>
-        <member name="M:iSCP.Connection.Connect(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks,System.Action{iSCP.Connection,System.Exception})">
+        <member name="M:iSCP.Connection.Connect(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks,System.Action{iSCP.Connection,System.Exception})">
             <summary>
             接続を行います。
             </summary>
@@ -1324,6 +1365,7 @@
             <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
             <param name="nodeId">ノードID。</param>
             <param name="projectUuid">プロジェクトID。</param>
+            <param name="connectTimeout">コネクトのタイムアウト（ミリ秒）。</param>
             <param name="pingTimeout">Pingタイムアウト（秒）。タイムアウトが発生した場合トランスポートを切断します。</param>
             <param name="pingInterval">Ping間隔（秒）。</param>
             <param name="autoReconnect">自動で再接続するかどうか。</param>
@@ -1334,7 +1376,7 @@
             <param name="e2ECallCallbacks">コネクションで発生するE2Eコールイベントをハンドリングするインターフェース。</param>
             <param name="completion">処理完了時のコールバック。</param>
         </member>
-        <member name="M:iSCP.Connection.ConnectAsync(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks)">
+        <member name="M:iSCP.Connection.ConnectAsync(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks)">
             <summary>
             接続を行います。
             </summary>
@@ -1343,6 +1385,7 @@
             <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
             <param name="nodeId">ノードID。</param>
             <param name="projectUuid">プロジェクトID。</param>
+            <param name="connectTimeout">コネクトのタイムアウト（ミリ秒）。</param>
             <param name="pingTimeout">Pingタイムアウト（秒）。タイムアウトが発生した場合トランスポートを切断します。</param>
             <param name="pingInterval">Ping間隔（秒）。</param>
             <param name="autoReconnect">自動で再接続するかどうか。</param>
@@ -2273,14 +2316,24 @@
             空チャンク省略フラグのデフォルト値。
             </summary>
         </member>
+        <member name="F:iSCP.Downstream.DEFAULT_OPEN_TIMEOUT">
+            <summary>
+            オープンのタイムアウトのデフォルト値（ミリ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.DEFAULT_CLOSE_TIMEOUT">
+            <summary>
+            クローズのタイムアウトのデフォルト値（ミリ秒）。
+            </summary>
+        </member>
         <member name="F:iSCP.Downstream.DEFAULT_ACK_INTERVAL">
             <summary>
-            受信したメッセージに対するAckの返却間隔のデフォルト値。
+            受信したメッセージに対するAckの返却間隔のデフォルト値（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Downstream.DEFAULT_EXPIRY_INTERVAL">
             <summary>
-            ストリームが異常切断された時点からの有効期間のデフォルト値。
+            ストリームが異常切断された時点からの有効期間のデフォルト値（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Downstream.Callbacks">
@@ -2332,6 +2385,16 @@
         <member name="F:iSCP.Downstream.AckInterval">
             <summary>
             Ack返却間隔（ミリ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.OpenTimeout">
+            <summary>
+            オープンのタイムアウト（ミリ秒）。
+            </summary>
+        </member>
+        <member name="F:iSCP.Downstream.CloseTimeout">
+            <summary>
+            クローズのタイムアウト（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Downstream.DataIdAliasMap">
@@ -2454,19 +2517,24 @@
             永続化するかどうかのデフォルト値。
             </summary>
         </member>
+        <member name="F:iSCP.Upstream.DEFAULT_OPEN_TIMEOUT">
+            <summary>
+            オープンのタイムアウトのデフォルト値（ミリ秒）。
+            </summary>
+        </member>
         <member name="F:iSCP.Upstream.DEFAULT_CLOSE_TIMEOUT">
             <summary>
-            クローズのタイムアウトのデフォルト値。
+            クローズのタイムアウトのデフォルト値（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Upstream.DEFAULT_ACK_INTERVAL">
             <summary>
-            Ack返却間隔のデフォルト値。
+            Ack返却間隔のデフォルト値（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Upstream.DEFAULT_EXPIRY_INTERVAL">
             <summary>
-            有効期限のデフォルト値。
+            有効期限のデフォルト値（秒）。
             </summary>
         </member>
         <member name="P:iSCP.Upstream.DEFAULT_FLUSH_POLICY">
@@ -2507,12 +2575,12 @@
         </member>
         <member name="F:iSCP.Upstream.AckInterval">
             <summary>
-            Ack返却間隔。
+            Ack返却間隔（ミリ秒）。
             </summary>
         </member>
         <member name="F:iSCP.Upstream.ExpiryInterval">
             <summary>
-            有効期限。
+            有効期限（秒）。
             </summary>
         </member>
         <member name="F:iSCP.Upstream.Persist">
@@ -2535,9 +2603,14 @@
             データポイントのフラッシュポリシー。
             </summary>
         </member>
+        <member name="F:iSCP.Upstream.OpenTimeout">
+            <summary>
+            オープンのタイムアウト（ミリ秒）。
+            </summary>
+        </member>
         <member name="F:iSCP.Upstream.CloseTimeout">
             <summary>
-            クローズのタイムアウト。
+            クローズのタイムアウト（ミリ秒）。
             </summary>
         </member>
         <member name="M:iSCP.Upstream.Close(System.Action{System.Exception},System.Boolean)">
