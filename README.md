@@ -76,10 +76,10 @@ public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
             address = urls[1];
         }
         // WebSocketを使って接続するように指定します。
-        ITransportConfig transportConfig = new WebSocket.Config(enableTls: enableTls);
+        IConnector connector = new WebSocketConnector(enableTls: enableTls);
         Connection.Connect(
             address: address, 
-            transportConfig: transportConfig, 
+            connector: connector, 
             tokenSource: (token) =>
             {
                 // アクセス用のトークンを指定します。接続時に発生するイベントにより使用されます。
