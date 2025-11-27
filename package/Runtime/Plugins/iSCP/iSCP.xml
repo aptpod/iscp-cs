@@ -1257,14 +1257,14 @@
             プロトコルバージョン。
             </summary>
         </member>
-        <member name="F:iSCP.Connection.TransportConfig">
+        <member name="F:iSCP.Connection.Connector">
             <summary>
-            トランスポート用のコンフィグ。
+            トランスポートのコネクター。
             </summary>
         </member>
         <member name="F:iSCP.Connection.Address">
             <summary>
-            アドレス。
+            接続先のアドレス。
             </summary>
         </member>
         <member name="F:iSCP.Connection.NodeId">
@@ -1337,9 +1337,9 @@
             実際にコネクションが接続中かどうか。
             </summary>
         </member>
-        <member name="M:iSCP.Connection.#ctor(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName)">
-            <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
-            <param name="transportConfig">トランスポートの設定。</param>
+        <member name="M:iSCP.Connection.#ctor(System.String,iSCP.Transport.IConnector,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName)">
+            <param name="address">接続先のアドレス。`127.0.0.1:8080` 形式。</param>
+            <param name="connector">トランスポートのコネクター。</param>
             <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
             <param name="nodeId">ノードID。</param>
             <param name="projectUuid">プロジェクトID。</param>
@@ -1351,12 +1351,12 @@
             <param name="reconnectMaxInterval">自動で再接続する際の、リトライ間隔の最大値（ミリ秒）。</param>
             <param name="encoding">エンコーディング名。</param>
         </member>
-        <member name="M:iSCP.Connection.Connect(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks,System.Action{iSCP.Connection,System.Exception})">
+        <member name="M:iSCP.Connection.Connect(System.String,iSCP.Transport.IConnector,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks,System.Action{iSCP.Connection,System.Exception})">
             <summary>
             接続を行います。
             </summary>
-            <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
-            <param name="transportConfig">トランスポートの設定。</param>
+            <param name="address">接続先のアドレス。`127.0.0.1:8080` 形式。</param>
+            <param name="connector">トランスポートのコネクター。</param>
             <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
             <param name="nodeId">ノードID。</param>
             <param name="projectUuid">プロジェクトID。</param>
@@ -1371,12 +1371,12 @@
             <param name="e2ECallCallbacks">コネクションで発生するE2Eコールイベントをハンドリングするインターフェース。</param>
             <param name="completion">処理完了時のコールバック。</param>
         </member>
-        <member name="M:iSCP.Connection.ConnectAsync(System.String,iSCP.Transport.ITransportConfig,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks)">
+        <member name="M:iSCP.Connection.ConnectAsync(System.String,iSCP.Transport.IConnector,System.Action{System.Action{System.String}},System.String,System.String,System.Int64,System.UInt32,System.UInt32,System.Boolean,System.Int64,System.Int64,iSCP.EncodingName,iSCP.IConnectionCallbacks,iSCP.IConnectionE2ECallCallbacks)">
             <summary>
             接続を行います。
             </summary>
-            <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
-            <param name="transportConfig">トランスポートの設定。</param>
+            <param name="address">接続先のアドレス。`127.0.0.1:8080` 形式。</param>
+            <param name="connector">トランスポートのコネクター。</param>
             <param name="tokenSource">トークンソース。iSCPコネクションを開くたびに、このメソッドをコールしトークンを取得します。</param>
             <param name="nodeId">ノードID。</param>
             <param name="projectUuid">プロジェクトID。</param>
@@ -3667,6 +3667,39 @@
             拡張フィールド
             </summary>
         </member>
+        <member name="T:iSCP.Transport.NegotiationParams">
+            <summary>
+            ネゴシエーションパラメータです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Transport.NegotiationParams.EncodingName">
+            <summary>
+            エンコーディング名。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.NegotiationParams.#ctor">
+            <summary>
+            コンストラクタ。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.NegotiationParams.#ctor(iSCP.EncodingName)">
+            <summary>
+            コンストラクタ。
+            </summary>
+            <param name="encodingName">エンコーディング名。</param>
+        </member>
+        <member name="M:iSCP.Transport.NegotiationParams.ToQueryString">
+            <summary>
+            URLのクエリパラメータ形式にエンコードします。
+            </summary>
+            <returns>URLパラメータにエンコードされたネゴシエーションパラメータ。</returns>
+        </member>
+        <member name="M:iSCP.Transport.NegotiationParams.ToQueryParameters">
+            <summary>
+            URLのクエリパラメータ形式にエンコードします。
+            </summary>
+            <returns>URLパラメータにエンコードされたネゴシエーションパラメータ。</returns>
+        </member>
         <member name="F:iSCP.Transport.Receiver.DEFAULT_TIMEOUT">
             <summary>
             デフォルトのタイムアウト時間。
@@ -3687,65 +3720,203 @@
         </member>
         <member name="T:iSCP.Transport.ITransportConfig">
             <summary>
-            トランスポートの設定のインターフェイスです。
+            ITransportConfig は非推奨です。代わりに IConnector を使用してください。
             </summary>
         </member>
-        <member name="P:iSCP.Transport.ITransportConfig.Type">
+        <member name="T:iSCP.Transport.ITransportCallbacks">
             <summary>
-            トランスポートのタイプ。
+            トランスポートの処理イベントです。
             </summary>
         </member>
-        <member name="T:iSCP.Transport.TransportType">
+        <member name="M:iSCP.Transport.ITransportCallbacks.DidConnect(iSCP.Transport.ITransport)">
             <summary>
-            トランスポートのタイプです。
+            サーバーとの接続に成功した際にコールしてください。
             </summary>
         </member>
-        <member name="F:iSCP.Transport.TransportType.WebSocket">
+        <member name="M:iSCP.Transport.ITransportCallbacks.DidDisconnect(iSCP.Transport.ITransport)">
             <summary>
-            WebSocket。
+            サーバーと切断された際にコールしてください。
             </summary>
+        </member>
+        <member name="M:iSCP.Transport.ITransportCallbacks.DidFailWithError(iSCP.Transport.ITransport,System.Exception)">
+            <summary>
+            サーバーとの接続でエラーが発生した際にコールしてください。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.ITransportCallbacks.DidReceiveMessage(iSCP.Transport.ITransport,System.Object)">
+            <summary>
+            サーバーからメッセージを受信した際にコールしてください。
+            </summary>
+        </member>
+        <member name="T:iSCP.Transport.ITransport">
+            <summary>
+            トランスポートを管理する基底インターフェイスです。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.ITransport.Name">
+            <summary>
+            トランスポートの名前。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.ITransport.Address">
+            <summary>
+            接続先のアドレス。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.ITransport.NegotiationParams">
+            <summary>
+            ネゴシエーションパラメータ。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.ITransport.Callbacks">
+            <summary>
+            トランスポートで利用するメソッドです。
+            内部でコールされます。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.ITransport.IsConnecting">
+            <summary>
+            接続中かどうか。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.ITransport.Close(System.Action{System.Exception})">
+            <summary>
+            サーバーとの接続を切断する際にコールされるメソッドです。
+            </summary>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Transport.ITransport.Write(System.Byte[])">
+            <summary>
+            サーバーへのデータ書き込み要求です。
+            </summary>
+            <param name="data">サーバーへ書き込むデータ。</param>
+            <returns>書き込み処理中に発生した例外。例外が発生しなかった場合は `null` を返します。</returns>
+        </member>
+        <member name="T:iSCP.Transport.IConnector">
+            <summary>
+            iSCPコネクターのインターフェースです。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.IConnector.Connect(System.String,iSCP.Transport.NegotiationParams,System.Action{iSCP.Transport.ITransport,System.Exception})">
+            <summary>
+            サーバーへ接続する際にコールされるメソッドです。
+            </summary>
+            <param name="address">接続先のアドレス。 `127.0.0.1:8080` 形式。</param>
+            <param name="negotiationParams">ネゴシエーションパラメータ。</param>
+            <param name="completion">処理完了時のコールバック。</param>
         </member>
         <member name="T:iSCP.Transport.WebSocket">
             <summary>
             WebSocketです。
             </summary>
         </member>
-        <member name="F:iSCP.Transport.WebSocket.DEFAULT_PATH">
+        <member name="T:iSCP.Transport.WebSocket.Config">
+            <summary>
+            WebSocket.Config は非推奨です。代わりに WebSocketConnector を使用してください。
+            </summary>
+        </member>
+        <member name="T:iSCP.Transport.WebSocketConnector">
+            <summary>
+            WebSocketのコネクターです。
+            </summary>
+        </member>
+        <member name="F:iSCP.Transport.WebSocketConnector.DEFAULT_PATH">
             <summary>
             デフォルトのパス。
             </summary>
         </member>
-        <member name="T:iSCP.Transport.WebSocket.Config">
-            <summary>
-            WebSocketの設定です。
-            </summary>
-        </member>
-        <member name="P:iSCP.Transport.WebSocket.Config.Type">
-            <summary>
-            トランスポートタイプ。
-            </summary>
-        </member>
-        <member name="F:iSCP.Transport.WebSocket.Config.Path">
+        <member name="F:iSCP.Transport.WebSocketConnector.Path">
             <summary>
             パス。
             <para>デフォルトは `/api/iscp/connect` です。</para>
             </summary>
         </member>
-        <member name="F:iSCP.Transport.WebSocket.Config.Port">
+        <member name="F:iSCP.Transport.WebSocketConnector.Port">
             <summary>
             ポート。
             <para>`null` が設定されている場合デフォルトのポートが利用されます。</para>
             </summary>
         </member>
-        <member name="F:iSCP.Transport.WebSocket.Config.EnableTls">
+        <member name="F:iSCP.Transport.WebSocketConnector.EnableTls">
             <summary>
             TLSが有効かどうか。
             </summary>
         </member>
-        <member name="M:iSCP.Transport.WebSocket.Config.#ctor(System.String,System.Nullable{System.Int32},System.Boolean)">
+        <member name="F:iSCP.Transport.WebSocketConnector.ClientAuthCertificate">
+            <summary>
+            クライアント認証の証明書情報。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.WebSocketConnector.#ctor(System.String,System.Nullable{System.Int32},System.Boolean,System.Security.Cryptography.X509Certificates.X509Certificate)">
             <param name="path">パス。<para>デフォルトは `/api/iscp/connect` です。</para></param>
             <param name="port">ポート。<para>`null` が設定されている場合デフォルトのポートが利用されます。</para></param>
             <param name="enableTls">TLSが有効かどうか。</param>
+            <param name="clientAuthCertificate">クライアント認証の証明書情報。</param>
+        </member>
+        <member name="M:iSCP.Transport.WebSocketConnector.Connect(System.String,iSCP.Transport.NegotiationParams,System.Action{iSCP.Transport.ITransport,System.Exception})">
+            <summary>
+            トランスポートを接続する際にコールされます。
+            </summary>
+            <param name="address">接続先のアドレス。127.0.0.1:8080 形式。</param>
+            <param name="negotiationParams">ネゴシエーションパラメータ。</param>
+            <param name="completion">接続完了時のコールバック。</param>
+        </member>
+        <member name="T:iSCP.Transport.WebSocketTransport">
+            <summary>
+            WebSocketです。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.WebSocketTransport.Name">
+            <summary>
+            トランスポートの名前。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.WebSocketTransport.Address">
+            <summary>
+            接続先のアドレス。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.WebSocketTransport.NegotiationParams">
+            <summary>
+            ネゴシエーションパラメータ。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.WebSocketTransport.Callbacks">
+            <summary>
+            トランスポートで利用するメソッドです。
+            内部でコールされます。
+            </summary>
+        </member>
+        <member name="P:iSCP.Transport.WebSocketTransport.IsConnecting">
+            <summary>
+            接続中かどうか。
+            </summary>
+        </member>
+        <member name="M:iSCP.Transport.WebSocketTransport.Connect(System.String,iSCP.Transport.NegotiationParams,System.Action{System.Exception})">
+            <summary>
+            サーバーへ接続する際にコールされるメソッドです。
+            </summary>
+            <param name="address">接続先のアドレス。 `127.0.0.1:8080` 形式。</param>
+            <param name="negotiationParams">ネゴシエーションパラメータ。</param>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Transport.WebSocketTransport.Close(System.Action{System.Exception})">
+            <summary>
+            サーバーとの接続を切断する際にコールされるメソッドです。
+            </summary>
+            <param name="completion">処理完了時のコールバック。</param>
+        </member>
+        <member name="M:iSCP.Transport.WebSocketTransport.Write(System.Byte[])">
+            <summary>
+            サーバーへのデータ書き込み要求です。
+            </summary>
+            <param name="data">サーバーへ書き込むデータ。</param>
+            <returns>書き込み処理中に発生した例外。例外が発生しなかった場合は `null` を返します。</returns>
+        </member>
+        <member name="M:iSCP.Transport.WebSocketTransport.Finalize">
+            <summary>
+            デストラクタ。
+            </summary>
         </member>
         <member name="M:IMessageConverter.EncodeTo(iSCP.Message.IMessage)">
             <summary>
@@ -3760,6 +3931,16 @@
         <member name="P:IMessageConverter.Name">
             <summary>
             Nameは、このエンコーディング名です。
+            </summary>
+        </member>
+        <member name="T:EncodingNameExtensions">
+            <summary>
+            エンコーディング名の拡張メソッドです。
+            </summary>
+        </member>
+        <member name="M:EncodingNameExtensions.GetName(iSCP.EncodingName)">
+            <summary>
+            エンコーディング名の文字列を取得します。
             </summary>
         </member>
     </members>
