@@ -29,17 +29,12 @@ https://github.com/aptpod/iscp-csharp.git?path=/package
 このサンプルではiscp-csを使ってintdash APIに接続します。
 
 ```csharp
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 // iSCPをインポート。
 using iSCP;
 using iSCP.Model;
 using iSCP.Transport;
 
-public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
+public partial class Example : IConnectionCallbacks
 {
     /// <summary>
     /// 接続するintdashサーバー
@@ -60,7 +55,7 @@ public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
     /// </summary>
     Connection connection;
 
-    void Connect()
+    public void Connect(Action onConnected = null)
     {
         // 接続情報のセットアップをします。
         var urls = targetServer.Split(new string[] { "://" }, StringSplitOptions.None);
@@ -78,14 +73,14 @@ public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
         // WebSocketを使って接続するように指定します。
         IConnector connector = new WebSocketConnector(enableTls: enableTls);
         Connection.Connect(
-            address: address, 
-            connector: connector, 
+            address: address,
+            connector: connector,
             tokenSource: (token) =>
             {
                 // アクセス用のトークンを指定します。接続時に発生するイベントにより使用されます。
                 // ここでは固定のトークンを返していますが随時トークンの更新を行う実装にするとトークンの期限切れを考える必要がなくなります。
                 token(accessToken);
-            }, 
+            },
             nodeId: nodeId,
             completion: (con, exception) =>
             {
@@ -98,6 +93,7 @@ public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
                 this.connection = connection;
                 connection.Callbacks = this; // IConnectionCallbacks
                 // 以降、StartUpstreamやStartDownstreamなどが実行可能になります。
+                onConnected?.Invoke();
             });
     }
 
@@ -129,7 +125,7 @@ public partial class ExampleForUnity : MonoBehaviour, IConnectionCallbacks
 このサンプルでは、基準時刻のメタデータと、文字列型のデータポイントをiSCPサーバーへ送信しています。
 
 ```csharp
-public partial class ExampleForUnity : IUpstreamCallbacks
+public partial class Example : IUpstreamCallbacks
 {
     /// <summary>
     /// 送信するデータを永続化するかどうか
@@ -140,14 +136,14 @@ public partial class ExampleForUnity : IUpstreamCallbacks
     /// </summary>
     List<Upstream> upstreams = new List<Upstream>();
 
-    void StartUpstream()
+    public void StartUpstream()
     {
         // セッションIDを払い出します。
         var sessionId = Guid.NewGuid().ToString().ToLower();
 
         // Upstreamをオープンします。
         connection?.OpenUpstream(
-            sessionId: sessionId, 
+            sessionId: sessionId,
             persist: upstreamPersist,
             completion: (upstream, exception) =>
             {
@@ -177,19 +173,19 @@ public partial class ExampleForUnity : IUpstreamCallbacks
                     {
                         if (sendBaseTimeEx != null)
                         {
-                        // 基準時刻の送信に失敗。
-                        return;
+                            // 基準時刻の送信に失敗。
+                            return;
                         }
-                    // 基準時刻の送信に成功。
+                        // 基準時刻の送信に成功。
 
-                    // 文字列型のデータポイントをiSCPサーバーへ送信します。
-                    upstream.WriteDataPoint(
-                            dataId: new DataId(
-                                name: "greeting",
-                                type: "string"),
-                            dataPoint: new DataPoint(
-                                elapsedTime: DateTime.UtcNow.Ticks - baseTime.Ticks, // 基準時刻からの経過時間をデータポイントの経過時間として打刻します。
-                                payload: System.Text.Encoding.UTF8.GetBytes("hello")));
+                        // 文字列型のデータポイントをiSCPサーバーへ送信します。
+                        upstream.WriteDataPoint(
+                                dataId: new DataId(
+                                    name: "greeting",
+                                    type: "string"),
+                                dataPoint: new DataPoint(
+                                    elapsedTime: DateTime.UtcNow.Ticks - baseTime.Ticks, // 基準時刻からの経過時間をデータポイントの経過時間として打刻します。
+                                    payload: System.Text.Encoding.UTF8.GetBytes("hello")));
                     });
             });
     }
@@ -233,7 +229,7 @@ public partial class ExampleForUnity : IUpstreamCallbacks
 このサンプルでは、アップストリーム開始のメタデータ、基準時刻のメタデータ、文字列型のデータポイントを受信しています。
 
 ```csharp
-public partial class ExampleForUnity : IDownstreamCallbacks
+public partial class Example : IDownstreamCallbacks
 {
     /// <summary>
     /// 受信したいデータを送信している送信元ノードのUUID
@@ -245,7 +241,7 @@ public partial class ExampleForUnity : IDownstreamCallbacks
     /// </summary>
     List<Downstream> downstreams = new List<Downstream>();
 
-    void StartDownstream()
+    public void StartDownstream()
     {
         // ダウンストリームをオープンします。
         connection?.OpenDownstream(
@@ -279,12 +275,12 @@ public partial class ExampleForUnity : IDownstreamCallbacks
     public void OnReceiveChunk(Downstream downstream, DownstreamChunk message)
     {
         // データポイントを読み込むことができた際にコールされます。
-        Debug.Log($"Received dataPoints sequenceNumber[{message.SequenceNumber}], sessionId[{message.UpstreamInfo.SessionId}]");
+        Console.WriteLine($"Received dataPoints sequenceNumber[{message.SequenceNumber}], sessionId[{message.UpstreamInfo.SessionId}]");
         foreach (var g in message.DataPointGroups)
         {
             foreach (var dp in g.DataPoints)
             {
-                Debug.Log($"Received a dataPoint dataName[{g.DataId.Name}], dataType[{g.DataId.Type}], payload[{System.Text.Encoding.UTF8.GetString(dp.Payload)}]");
+                Console.WriteLine($"Received a dataPoint dataName[{g.DataId.Name}], dataType[{g.DataId.Type}], payload[{System.Text.Encoding.UTF8.GetString(dp.Payload)}]");
             }
         }
     }
@@ -292,12 +288,12 @@ public partial class ExampleForUnity : IDownstreamCallbacks
     public void OnReceiveMetadata(Downstream downstream, DownstreamMetadata message)
     {
         // メタデータを受信した際にコールされます。
-        Debug.Log($"Received a metadata sourceNodeId[{message.SourceNodeId}], metadataType:{message.Type}");
+        Console.WriteLine($"Received a metadata sourceNodeId[{message.SourceNodeId}], metadataType:{message.Type}");
         switch (message.Type)
         {
             case DownstreamMetadata.MetadataType.BaseTime:
                 var baseTime = message.BaseTime.Value;
-                Debug.Log($"Received baseTime[{baseTime.BaseTime_.ToDateTimeFromUnixTimeTicks()}], priority[{baseTime.Priority}], name[{baseTime.Name}]");
+                Console.WriteLine($"Received baseTime[{baseTime.BaseTime_.ToDateTimeFromUnixTimeTicks()}], priority[{baseTime.Priority}], name[{baseTime.Name}]");
                 break;
             default: break;
         }
@@ -330,17 +326,12 @@ E2E（エンドツーエンド）コールのサンプルです。
 コントローラノードが対象ノードに対して指示を出し、対象ノードは受信完了のリプライを行う簡単なサンプルです。
 
 ```csharp
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 // iSCPをインポート。
 using iSCP;
 using iSCP.Transport;
 using iSCP.Model;
 
-public partial class E2ECallExampleForUnity : MonoBehaviour
+public partial class E2ECallExample
 {
     /// <summary>
     /// 接続するintdashサーバー
@@ -378,10 +369,10 @@ public partial class E2ECallExampleForUnity : MonoBehaviour
 }
 
 // コントローラーノードからメッセージを送信するサンプルです。このサンプルでは文字列メッセージを対象ノードに対して送信し、対象ノードからのリプライを待ちます。
-public partial class E2ECallExampleForUnity
+public partial class E2ECallExample
 {
 
-    void ConnectForController()
+    public void ConnectForController(Action onConnected = null)
     {
         // 接続情報のセットアップをします。
         var urls = targetServer.Split(new string[] { "://" }, StringSplitOptions.None);
@@ -397,10 +388,10 @@ public partial class E2ECallExampleForUnity
             address = urls[1];
         }
         // WebSocketを使って接続するように指定します。
-        ITransportConfig transportConfig = new WebSocket.Config(enableTls: enableTls);
+        IConnector connector = new WebSocketConnector(enableTls: enableTls);
         Connection.Connect(
             address: address,
-            transportConfig: transportConfig,
+            connector: connector,
             tokenSource: (token) =>
             {
                 // アクセストークンを指定します。接続時に発生するイベントにより使用されます。
@@ -417,10 +408,11 @@ public partial class E2ECallExampleForUnity
                 }
                 // 接続成功。
                 this.connectionForController = connection;
+                onConnected?.Invoke();
             });
     }
 
-    void SendCall()
+    public void SendCall()
     {
         // コールを送信し、リプライコールを受信するとコールバックが発生します。
         connectionForController?.SendCallAndWaitReplyCall(
@@ -428,7 +420,7 @@ public partial class E2ECallExampleForUnity
                 destinationNodeId: targetNodeId,
                 name: "greeting",
                 type: "string",
-                payload: System.Text.Encoding.UTF8.GetBytes("hello")), (downstreamReplyCall, exception) =>
+                payload: System.Text.Encoding.UTF8.GetBytes("hello")), completion: (downstreamReplyCall, exception) =>
                 {
                     if (exception != null)
                     {
@@ -442,10 +434,10 @@ public partial class E2ECallExampleForUnity
 }
 
 // コントローラーノードからのコールを受け付け、すぐにリプライするサンプルです。
-public partial class E2ECallExampleForUnity : IConnectionE2ECallCallbacks
+public partial class E2ECallExample : IConnectionE2ECallCallbacks
 {
 
-    void ConnectForTarget()
+    public void ConnectForTarget(Action onConnected = null)
     {
         // 接続情報のセットアップをします。
         var urls = targetServer.Split(new string[] { "://" }, StringSplitOptions.None);
@@ -461,10 +453,10 @@ public partial class E2ECallExampleForUnity : IConnectionE2ECallCallbacks
             address = urls[1];
         }
         // WebSocketを使って接続するように指定します。
-        ITransportConfig transportConfig = new WebSocket.Config(enableTls: enableTls);
+        IConnector connector = new WebSocketConnector(enableTls: enableTls);
         Connection.Connect(
             address: address,
-            transportConfig: transportConfig,
+            connector: connector,
             tokenSource: (token) =>
             {
                 // アクセス用のトークンを指定します。接続時に発生するイベントにより使用されます。
@@ -483,6 +475,7 @@ public partial class E2ECallExampleForUnity : IConnectionE2ECallCallbacks
                 this.connectionForTarget = connection;
                 // DownstreamCallの受信を監視するためにコールバックを設定します。
                 connection.E2ECallCallbacks = this; // IConnectionE2ECallCallbacks
+                onConnected?.Invoke();
             });
     }
 
@@ -499,7 +492,7 @@ public partial class E2ECallExampleForUnity : IConnectionE2ECallCallbacks
                 destinationNodeId: downstreamCall.SourceNodeId,
                 name: "reply_greeting",
                 type: "string",
-                payload: System.Text.Encoding.UTF8.GetBytes("world")), (exception) =>
+                payload: System.Text.Encoding.UTF8.GetBytes("world")), completion: (exception) =>
                 {
                     if (exception != null)
                     {
