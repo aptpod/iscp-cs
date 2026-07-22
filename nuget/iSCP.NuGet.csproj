@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NuspecFile>iSCP.nuspec</NuspecFile>
+    <NuspecProperties>version=$(PackageVersion);artifactPath=$(ArtifactPath);readmePath=$(ReadmePath)</NuspecProperties>
+  </PropertyGroup>
+</Project>
