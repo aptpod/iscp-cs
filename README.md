@@ -32,7 +32,7 @@ Install-Package iSCP
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="iSCP" Version="1.3.0" />
+  <PackageReference Include="iSCP" Version="1.3.1" />
 </ItemGroup>
 ```
 
@@ -55,6 +55,9 @@ https://github.com/aptpod/iscp-cs.git?path=/package
 このサンプルではiscp-csを使ってintdash APIに接続します。
 
 ```csharp
+using System;
+using System.Collections.Generic;
+
 // iSCPをインポート。
 using iSCP;
 using iSCP.Model;
@@ -352,6 +355,8 @@ E2E（エンドツーエンド）コールのサンプルです。
 コントローラノードが対象ノードに対して指示を出し、対象ノードは受信完了のリプライを行う簡単なサンプルです。
 
 ```csharp
+using System;
+
 // iSCPをインポート。
 using iSCP;
 using iSCP.Transport;

@@ -1380,11 +1380,6 @@
             再接続中かどうか。
             </summary>
         </member>
-        <member name="F:iSCP.Connection.needsReconnectAfterCurrent">
-            <summary>
-            再接続中に断線が発生し、再接続完了後に再度再接続が必要かどうか。
-            </summary>
-        </member>
         <member name="F:iSCP.Connection.Encoding">
             <summary>
             エンコーディング名。
@@ -3910,13 +3905,6 @@
             <summary>
             レシーバーの名前。
             </summary>
-        </member>
-        <member name="M:iSCP.Transport.Receiver.#ctor(System.Int64)">
-            <param name="timeout">タイムアウト時間（ミリ秒）。 `0` 以下の場合はタイムアウトしません。</param>
-        </member>
-        <member name="M:iSCP.Transport.Receiver.#ctor(System.String,System.Int64)">
-            <param name="name">レシーバーの名前。</param>
-            <param name="timeout">タイムアウト時間（ミリ秒）。 `0` 以下の場合はタイムアウトしません。</param>
         </member>
         <member name="T:iSCP.Transport.ITransportConfig">
             <summary>
