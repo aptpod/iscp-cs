@@ -32,7 +32,7 @@ Install-Package iSCP
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="iSCP" Version="1.3.1" />
+  <PackageReference Include="iSCP" Version="1.3.2" />
 </ItemGroup>
 ```
 
